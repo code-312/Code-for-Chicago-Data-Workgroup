@@ -1,0 +1,1 @@
+This directory houses projects in their exploratory phase. Once projects move into a production phase, they will have their own repo under the [Code for Chicago organization](https://github.com/Code-For-Chicago/).
