@@ -1,0 +1,1359 @@
+,Category,Dog,Cat,Other,Type,Month,Year,Date
+1,Stray,378,409,13,Intakes,April,2015,2015-04
+2,Owner Surrender,237,216,8,Intakes,April,2015,2015-04
+3,Confiscate,59,27,0,Intakes,April,2015,2015-04
+4,Wildlife,0,0,95,Intakes,April,2015,2015-04
+5,Disposal Request,36,18,3,Intakes,April,2015,2015-04
+6,Euthanasia Request,51,8,0,Intakes,April,2015,2015-04
+7,Returns,5,1,0,Intakes,April,2015,2015-04
+10,Adoption,46,34,0,Outcomes,April,2015,2015-04
+11,Returned to Owner,124,5,0,Outcomes,April,2015,2015-04
+12,Transfer,282,528,53,Outcomes,April,2015,2015-04
+13,Euthanasia by Request,48,8,0,Outcomes,April,2015,2015-04
+14,Other Euthanasia,215,58,43,Outcomes,April,2015,2015-04
+15,Died in Care,3,7,7,Outcomes,April,2015,2015-04
+16,Dead on Arrival,48,21,13,Outcomes,April,2015,2015-04
+1,Stray,323,294,2,Intakes,April,2016,2016-04
+2,Owner Surrender,195,193,5,Intakes,April,2016,2016-04
+3,Confiscate,78,17,2,Intakes,April,2016,2016-04
+4,Wildlife,0,0,110,Intakes,April,2016,2016-04
+5,Disposal Request,42,18,14,Intakes,April,2016,2016-04
+6,Euthanasia Request,44,12,2,Intakes,April,2016,2016-04
+7,Returns,3,1,0,Intakes,April,2016,2016-04
+10,Adoption,44,43,0,Outcomes,April,2016,2016-04
+11,Returned to Owner,109,7,0,Outcomes,April,2016,2016-04
+12,Transfer,263,389,59,Outcomes,April,2016,2016-04
+13,Euthanasia by Request,40,12,2,Outcomes,April,2016,2016-04
+14,Other Euthanasia,155,32,33,Outcomes,April,2016,2016-04
+15,Died in Care,3,7,4,Outcomes,April,2016,2016-04
+16,Dead on Arrival,52,22,42,Outcomes,April,2016,2016-04
+1,Stray,255,322,8,Intakes,April,2017,2017-04
+2,Owner Surrender,203,166,3,Intakes,April,2017,2017-04
+3,Confiscate,63,13,11,Intakes,April,2017,2017-04
+4,Wildlife,0,0,178,Intakes,April,2017,2017-04
+5,Disposal Request,30,13,4,Intakes,April,2017,2017-04
+6,Euthanasia Request,45,17,0,Intakes,April,2017,2017-04
+7,Returns,8,2,0,Intakes,April,2017,2017-04
+10,Adoption,50,52,0,Outcomes,April,2017,2017-04
+11,Returned to Owner,96,12,1,Outcomes,April,2017,2017-04
+12,Transfer,304,386,121,Outcomes,April,2017,2017-04
+13,Euthanasia by Request,43,16,0,Outcomes,April,2017,2017-04
+14,Other Euthanasia,82,18,44,Outcomes,April,2017,2017-04
+15,Died in Care,1,4,16,Outcomes,April,2017,2017-04
+16,Dead on Arrival,35,19,25,Outcomes,April,2017,2017-04
+1,Stray,320,235,15,Intakes,April,2018,2018-04
+2,Owner Surrender,219,199,4,Intakes,April,2018,2018-04
+3,Confiscate,26,17,0,Intakes,April,2018,2018-04
+4,Wildlife,0,0,127,Intakes,April,2018,2018-04
+5,Disposal Request,39,9,1,Intakes,April,2018,2018-04
+6,Euthanasia Request,55,19,1,Intakes,April,2018,2018-04
+7,Returns,6,1,0,Intakes,April,2018,2018-04
+8,Quarantine,15,0,0,Intakes,April,2018,2018-04
+11,Adoption,89,28,0,Outcomes,April,2018,2018-04
+12,Strays Returned to Owner,84,3,4,Outcomes,April,2018,2018-04
+13,Other Returned to Owner,31,8,1,Outcomes,April,2018,2018-04
+14,Transfer,339,425,55,Outcomes,April,2018,2018-04
+15,Euthanasia by Request,47,13,1,Outcomes,April,2018,2018-04
+16,Other Euthanasia,45,25,47,Outcomes,April,2018,2018-04
+17,Died in Care,2,6,18,Outcomes,April,2018,2018-04
+18,Dead on Arrival,37,11,18,Outcomes,April,2018,2018-04
+1,Stray,320,262,5,Intakes,April,2019,2019-04
+2,Owner Surrender,141,164,7,Intakes,April,2019,2019-04
+3,Confiscate,22,7,4,Intakes,April,2019,2019-04
+4,Wildlife,0,0,81,Intakes,April,2019,2019-04
+5,Disposal Request,31,10,3,Intakes,April,2019,2019-04
+6,Euthanasia Request,41,14,0,Intakes,April,2019,2019-04
+7,Returns,10,1,0,Intakes,April,2019,2019-04
+8,Quarantine,11,0,0,Intakes,April,2019,2019-04
+11,Adoption,105,41,0,Outcomes,April,2019,2019-04
+12,Strays Returned to Owner,109,4,0,Outcomes,April,2019,2019-04
+13,Other Returned to Owner,31,1,0,Outcomes,April,2019,2019-04
+14,Transfer,228,349,46,Outcomes,April,2019,2019-04
+15,Euthanasia by Request,37,14,0,Outcomes,April,2019,2019-04
+16,Other Euthanasia,42,19,40,Outcomes,April,2019,2019-04
+17,Died in Care,1,2,2,Outcomes,April,2019,2019-04
+18,Dead on Arrival,31,11,13,Outcomes,April,2019,2019-04
+1,Stray,162,181,15,Intakes,April,2020,2020-04
+2,Owner Surrender,44,69,1,Intakes,April,2020,2020-04
+3,Confiscate,16,3,0,Intakes,April,2020,2020-04
+4,Wildlife,0,0,106,Intakes,April,2020,2020-04
+5,Disposal Request,18,7,6,Intakes,April,2020,2020-04
+6,Euthanasia Request,37,5,6,Intakes,April,2020,2020-04
+7,Returns,3,0,0,Intakes,April,2020,2020-04
+8,Quarantine,0,1,0,Intakes,April,2020,2020-04
+11,Adoption,13,2,0,Outcomes,April,2020,2020-04
+12,Strays Returned to Owner,46,7,0,Outcomes,April,2020,2020-04
+13,Other Returned to Owner,9,2,0,Outcomes,April,2020,2020-04
+14,Transfer,168,232,50,Outcomes,April,2020,2020-04
+15,Euthanasia by Request,29,4,6,Outcomes,April,2020,2020-04
+16,Other Euthanasia,12,11,53,Outcomes,April,2020,2020-04
+17,Died in Care,3,3,5,Outcomes,April,2020,2020-04
+18,Dead on Arrival,21,9,18,Outcomes,April,2020,2020-04
+1,Stray,232,325,17,Intakes,April,2021,2021-04
+2,Owner Surrender,56,139,2,Intakes,April,2021,2021-04
+3,Confiscate,21,8,0,Intakes,April,2021,2021-04
+4,Wildlife,0,0,105,Intakes,April,2021,2021-04
+5,Disposal Request,36,9,4,Intakes,April,2021,2021-04
+6,Euthanasia Request,55,7,0,Intakes,April,2021,2021-04
+7,Returns,1,0,0,Intakes,April,2021,2021-04
+8,Quarantine,4,0,0,Intakes,April,2021,2021-04
+11,Adoption,30,4,0,Outcomes,April,2021,2021-04
+12,Strays Returned to Owner,73,4,0,Outcomes,April,2021,2021-04
+13,Other Returned to Owner,21,2,0,Outcomes,April,2021,2021-04
+14,Transfer,173,390,63,Outcomes,April,2021,2021-04
+15,Euthanasia by Request,40,4,0,Outcomes,April,2021,2021-04
+16,Other Euthanasia,15,24,52,Outcomes,April,2021,2021-04
+17,Died in Care,2,6,6,Outcomes,April,2021,2021-04
+18,Dead on Arrival,36,10,12,Outcomes,April,2021,2021-04
+1,Stray,372,535,6,Intakes,August,2015,2015-08
+2,Owner Surrender,260,216,37,Intakes,August,2015,2015-08
+3,Confiscate,64,23,6,Intakes,August,2015,2015-08
+4,Wildlife,0,0,138,Intakes,August,2015,2015-08
+5,Disposal Request,62,33,5,Intakes,August,2015,2015-08
+6,Euthanasia Request,59,28,0,Intakes,August,2015,2015-08
+7,Returns,9,1,0,Intakes,August,2015,2015-08
+10,Adoption,43,53,0,Outcomes,August,2015,2015-08
+11,Returned to Owner,91,9,1,Outcomes,August,2015,2015-08
+12,Transfer,278,559,118,Outcomes,August,2015,2015-08
+13,Euthanasia by Request,57,29,0,Outcomes,August,2015,2015-08
+14,Other Euthanasia,260,203,42,Outcomes,August,2015,2015-08
+15,Died in Care,10,15,5,Outcomes,August,2015,2015-08
+16,Dead on Arrival,76,47,27,Outcomes,August,2015,2015-08
+17,MISSING,1,0,0,Outcomes,August,2015,2015-08
+18,RELOCATE,0,0,1,Outcomes,August,2015,2015-08
+1,Stray,354,409,9,Intakes,August,2016,2016-08
+2,Owner Surrender,230,218,8,Intakes,August,2016,2016-08
+3,Confiscate,60,17,6,Intakes,August,2016,2016-08
+4,Wildlife,0,0,171,Intakes,August,2016,2016-08
+5,Disposal Request,42,22,5,Intakes,August,2016,2016-08
+6,Euthanasia Request,60,11,0,Intakes,August,2016,2016-08
+7,Returns,2,9,0,Intakes,August,2016,2016-08
+10,Adoption,58,51,0,Outcomes,August,2016,2016-08
+11,Returned to Owner,115,13,0,Outcomes,August,2016,2016-08
+12,Transfer,272,485,85,Outcomes,August,2016,2016-08
+13,Euthanasia by Request,57,11,0,Outcomes,August,2016,2016-08
+14,Other Euthanasia,217,86,55,Outcomes,August,2016,2016-08
+15,Died in Care,7,21,10,Outcomes,August,2016,2016-08
+16,Dead on Arrival,47,23,42,Outcomes,August,2016,2016-08
+17,RELOCATE,0,0,2,Outcomes,August,2016,2016-08
+1,Stray,247,489,13,Intakes,August,2017,2017-08
+2,Owner Surrender,186,171,7,Intakes,August,2017,2017-08
+3,Confiscate,61,12,2,Intakes,August,2017,2017-08
+4,Wildlife,0,0,141,Intakes,August,2017,2017-08
+5,Disposal Request,56,19,11,Intakes,August,2017,2017-08
+6,Euthanasia Request,85,9,0,Intakes,August,2017,2017-08
+7,Returns,6,1,0,Intakes,August,2017,2017-08
+10,Adoption,88,95,0,Outcomes,August,2017,2017-08
+11,Returned to Owner,132,11,0,Outcomes,August,2017,2017-08
+12,Transfer,264,476,67,Outcomes,August,2017,2017-08
+13,Euthanasia by Request,67,9,0,Outcomes,August,2017,2017-08
+14,Other Euthanasia,54,98,57,Outcomes,August,2017,2017-08
+15,Died in Care,6,12,12,Outcomes,August,2017,2017-08
+16,Dead on Arrival,64,24,34,Outcomes,August,2017,2017-08
+1,Stray,338,429,14,Intakes,August,2018,2018-08
+2,Owner Surrender,266,193,11,Intakes,August,2018,2018-08
+3,Confiscate,48,23,32,Intakes,August,2018,2018-08
+4,Wildlife,0,0,166,Intakes,August,2018,2018-08
+5,Disposal Request,56,24,11,Intakes,August,2018,2018-08
+6,Euthanasia Request,74,17,2,Intakes,August,2018,2018-08
+7,Returns,6,3,0,Intakes,August,2018,2018-08
+8,Quarantine,14,1,0,Intakes,August,2018,2018-08
+11,Adoption,91,103,0,Outcomes,August,2018,2018-08
+12,Strays Returned to Owner,76,3,0,Outcomes,August,2018,2018-08
+13,Other Returned to Owner,33,6,1,Outcomes,August,2018,2018-08
+14,Transfer,393,463,126,Outcomes,August,2018,2018-08
+15,Euthanasia by Request,62,14,0,Outcomes,August,2018,2018-08
+16,Other Euthanasia,47,52,59,Outcomes,August,2018,2018-08
+17,Died in Care,4,18,13,Outcomes,August,2018,2018-08
+18,Dead on Arrival,64,32,29,Outcomes,August,2018,2018-08
+19,Relocate,0,0,1,Outcomes,August,2018,2018-08
+1,Stray,324,568,17,Intakes,August,2019,2019-08
+2,Owner Surrender,202,257,15,Intakes,August,2019,2019-08
+3,Confiscate,22,3,8,Intakes,August,2019,2019-08
+4,Wildlife,0,0,181,Intakes,August,2019,2019-08
+5,Disposal Request,54,23,7,Intakes,August,2019,2019-08
+6,Euthanasia Request,75,27,0,Intakes,August,2019,2019-08
+7,Returns,9,3,0,Intakes,August,2019,2019-08
+8,Quarantine,13,0,0,Intakes,August,2019,2019-08
+11,Adoption,153,148,1,Outcomes,August,2019,2019-08
+12,Strays Returned to Owner,71,8,0,Outcomes,August,2019,2019-08
+13,Other Returned to Owner,28,1,3,Outcomes,August,2019,2019-08
+14,Transfer,324,497,153,Outcomes,August,2019,2019-08
+15,Euthanasia by Request,66,25,0,Outcomes,August,2019,2019-08
+16,Other Euthanasia,51,101,44,Outcomes,August,2019,2019-08
+17,Died in Care,9,16,11,Outcomes,August,2019,2019-08
+18,Dead on Arrival,52,32,31,Outcomes,August,2019,2019-08
+1,Stray,198,383,4,Intakes,August,2020,2020-08
+2,Owner Surrender,54,61,2,Intakes,August,2020,2020-08
+3,Confiscate,21,7,0,Intakes,August,2020,2020-08
+4,Wildlife,0,0,204,Intakes,August,2020,2020-08
+5,Disposal Request,26,15,12,Intakes,August,2020,2020-08
+6,Euthanasia Request,63,9,1,Intakes,August,2020,2020-08
+7,Returns,1,0,0,Intakes,August,2020,2020-08
+8,Quarantine,11,0,0,Intakes,August,2020,2020-08
+11,Adoption,42,33,0,Outcomes,August,2020,2020-08
+12,Strays Returned to Owner,54,7,1,Outcomes,August,2020,2020-08
+13,Other Returned to Owner,16,0,0,Outcomes,August,2020,2020-08
+14,Transfer,166,333,96,Outcomes,August,2020,2020-08
+15,Euthanasia by Request,53,8,1,Outcomes,August,2020,2020-08
+16,Other Euthanasia,18,36,77,Outcomes,August,2020,2020-08
+17,Died in Care,0,12,10,Outcomes,August,2020,2020-08
+18,Dead on Arrival,29,20,36,Outcomes,August,2020,2020-08
+1,Stray,317,449,7,Intakes,August,2021,2021-08
+2,Owner Surrender,28,31,14,Intakes,August,2021,2021-08
+3,Confiscate,38,6,4,Intakes,August,2021,2021-08
+4,Wildlife,0,0,131,Intakes,August,2021,2021-08
+5,Disposal Request,35,33,7,Intakes,August,2021,2021-08
+6,Euthanasia Request,75,15,3,Intakes,August,2021,2021-08
+7,Returns,1,1,0,Intakes,August,2021,2021-08
+8,Quarantine,2,0,0,Intakes,August,2021,2021-08
+11,Adoption,59,33,0,Outcomes,August,2021,2021-08
+12,Strays Returned to Owner,76,8,0,Outcomes,August,2021,2021-08
+13,Other Returned to Owner,20,4,0,Outcomes,August,2021,2021-08
+14,Transfer,199,406,79,Outcomes,August,2021,2021-08
+15,Euthanasia by Request,71,13,3,Outcomes,August,2021,2021-08
+16,Other Euthanasia,41,61,35,Outcomes,August,2021,2021-08
+17,Died in Care,5,20,24,Outcomes,August,2021,2021-08
+18,Dead on Arrival,38,39,20,Outcomes,August,2021,2021-08
+19,Missing,0,1,0,Outcomes,August,2021,2021-08
+1,Stray,317,169,5,Intakes,December,2015,2015-12
+2,Owner Surrender,208,105,22,Intakes,December,2015,2015-12
+3,Confiscate,66,10,6,Intakes,December,2015,2015-12
+4,Wildlife,0,0,42,Intakes,December,2015,2015-12
+5,Disposal Request,33,16,3,Intakes,December,2015,2015-12
+6,Euthanasia Request,35,6,3,Intakes,December,2015,2015-12
+7,Returns,2,2,0,Intakes,December,2015,2015-12
+10,Adoption,36,55,0,Outcomes,December,2015,2015-12
+11,Returned to Owner,104,7,0,Outcomes,December,2015,2015-12
+12,Transfer,268,290,51,Outcomes,December,2015,2015-12
+13,Euthanasia by Request,35,6,3,Outcomes,December,2015,2015-12
+14,Other Euthanasia,207,41,21,Outcomes,December,2015,2015-12
+15,Died in Care,10,5,0,Outcomes,December,2015,2015-12
+16,Dead on Arrival,43,17,9,Outcomes,December,2015,2015-12
+17,RELOCATE,0,0,2,Outcomes,December,2015,2015-12
+1,Stray,286,196,7,Intakes,December,2016,2016-12
+2,Owner Surrender,184,107,10,Intakes,December,2016,2016-12
+3,Confiscate,64,9,1,Intakes,December,2016,2016-12
+4,Wildlife,0,0,42,Intakes,December,2016,2016-12
+5,Disposal Request,37,26,2,Intakes,December,2016,2016-12
+6,Euthanasia Request,67,10,1,Intakes,December,2016,2016-12
+7,Returns,1,0,0,Intakes,December,2016,2016-12
+10,Adoption,36,42,0,Outcomes,December,2016,2016-12
+11,Returned to Owner,107,8,0,Outcomes,December,2016,2016-12
+12,Transfer,354,293,29,Outcomes,December,2016,2016-12
+13,Euthanasia by Request,57,9,1,Outcomes,December,2016,2016-12
+14,Other Euthanasia,105,33,26,Outcomes,December,2016,2016-12
+15,Died in Care,3,3,0,Outcomes,December,2016,2016-12
+16,Dead on Arrival,45,27,9,Outcomes,December,2016,2016-12
+1,Stray,219,187,9,Intakes,December,2017,2017-12
+2,Owner Surrender,170,149,7,Intakes,December,2017,2017-12
+3,Confiscate,55,15,0,Intakes,December,2017,2017-12
+4,Wildlife,0,0,43,Intakes,December,2017,2017-12
+5,Disposal Request,43,11,1,Intakes,December,2017,2017-12
+6,Euthanasia Request,56,15,0,Intakes,December,2017,2017-12
+7,Returns,6,3,0,Intakes,December,2017,2017-12
+10,Adoption,66,80,0,Outcomes,December,2017,2017-12
+11,Returned to Owner,83,10,1,Outcomes,December,2017,2017-12
+12,Transfer,247,363,30,Outcomes,December,2017,2017-12
+13,Euthanasia by Request,49,14,0,Outcomes,December,2017,2017-12
+14,Other Euthanasia,39,21,21,Outcomes,December,2017,2017-12
+15,Died in Care,1,1,1,Outcomes,December,2017,2017-12
+16,Dead on Arrival,50,14,6,Outcomes,December,2017,2017-12
+1,Stray,318,205,12,Intakes,December,2021,2021-12
+2,Owner Surrender,31,44,1,Intakes,December,2021,2021-12
+3,Confiscate,20,14,0,Intakes,December,2021,2021-12
+4,Wildlife,0,0,35,Intakes,December,2021,2021-12
+5,Disposal Request,28,10,2,Intakes,December,2021,2021-12
+6,Euthanasia Request,71,14,2,Intakes,December,2021,2021-12
+7,Returns,2,0,0,Intakes,December,2021,2021-12
+10,Adoption,52,54,1,Outcomes,December,2021,2021-12
+11,Strays Returned to Owner,76,5,0,Outcomes,December,2021,2021-12
+12,Other Returned to Owner,10,4,0,Outcomes,December,2021,2021-12
+13,Transfer,187,184,34,Outcomes,December,2021,2021-12
+14,Euthanasia by Request,65,12,2,Outcomes,December,2021,2021-12
+15,Other Euthanasia,53,26,18,Outcomes,December,2021,2021-12
+16,Died in Care,3,4,5,Outcomes,December,2021,2021-12
+17,Dead on Arrival,36,17,3,Outcomes,December,2021,2021-12
+18,Missing,1,0,0,Outcomes,December,2021,2021-12
+1,Stray,312,205,4,Intakes,December,2018,2018-12
+2,Owner Surrender,141,136,14,Intakes,December,2018,2018-12
+3,Confiscate,50,8,2,Intakes,December,2018,2018-12
+4,Wildlife,0,0,42,Intakes,December,2018,2018-12
+5,Disposal Request,34,15,4,Intakes,December,2018,2018-12
+6,Euthanasia Request,60,12,0,Intakes,December,2018,2018-12
+7,Returns,7,3,0,Intakes,December,2018,2018-12
+8,Quarantine,3,1,0,Intakes,December,2018,2018-12
+11,Adoption,108,120,0,Outcomes,December,2018,2018-12
+12,Strays Returned to Owner,98,8,0,Outcomes,December,2018,2018-12
+13,Other Returned to Owner,22,12,0,Outcomes,December,2018,2018-12
+14,Transfer,277,197,20,Outcomes,December,2018,2018-12
+15,Euthanasia by Request,54,9,0,Outcomes,December,2018,2018-12
+16,Other Euthanasia,31,20,27,Outcomes,December,2018,2018-12
+17,Died in Care,5,6,3,Outcomes,December,2018,2018-12
+18,Dead on Arrival,39,16,12,Outcomes,December,2018,2018-12
+1,Stray,326,219,13,Intakes,December,2019,2019-12
+2,Owner Surrender,181,136,13,Intakes,December,2019,2019-12
+3,Confiscate,48,18,0,Intakes,December,2019,2019-12
+4,Wildlife,0,0,51,Intakes,December,2019,2019-12
+5,Disposal Request,38,15,2,Intakes,December,2019,2019-12
+6,Euthanasia Request,62,13,0,Intakes,December,2019,2019-12
+7,Returns,8,3,0,Intakes,December,2019,2019-12
+8,Quarantine,3,1,0,Intakes,December,2019,2019-12
+11,Adoption,146,137,0,Outcomes,December,2019,2019-12
+12,Strays Returned to Owner,87,5,0,Outcomes,December,2019,2019-12
+13,Other Returned to Owner,12,2,0,Outcomes,December,2019,2019-12
+14,Transfer,281,252,32,Outcomes,December,2019,2019-12
+15,Euthanasia by Request,61,12,0,Outcomes,December,2019,2019-12
+16,Other Euthanasia,41,18,30,Outcomes,December,2019,2019-12
+17,Died in Care,1,7,2,Outcomes,December,2019,2019-12
+18,Dead on Arrival,45,19,5,Outcomes,December,2019,2019-12
+1,Stray,181,156,4,Intakes,December,2020,2020-12
+2,Owner Surrender,69,85,13,Intakes,December,2020,2020-12
+3,Confiscate,13,9,3,Intakes,December,2020,2020-12
+4,Wildlife,0,0,32,Intakes,December,2020,2020-12
+5,Disposal Request,22,12,1,Intakes,December,2020,2020-12
+6,Euthanasia Request,41,16,1,Intakes,December,2020,2020-12
+7,Returns,2,0,0,Intakes,December,2020,2020-12
+10,Adoption,35,24,1,Outcomes,December,2020,2020-12
+11,Strays Returned to Owner,59,3,0,Outcomes,December,2020,2020-12
+12,Other Returned to Owner,8,3,0,Outcomes,December,2020,2020-12
+13,Transfer,199,199,23,Outcomes,December,2020,2020-12
+14,Euthanasia by Request,36,14,1,Outcomes,December,2020,2020-12
+15,Other Euthanasia,13,16,23,Outcomes,December,2020,2020-12
+16,Died in Care,2,1,2,Outcomes,December,2020,2020-12
+17,Dead on Arrival,22,19,3,Outcomes,December,2020,2020-12
+1,Stray,279,244,3,Intakes,February,2015,2015-02
+2,Owner Surrender,215,110,53,Intakes,February,2015,2015-02
+3,Confiscate,60,5,1,Intakes,February,2015,2015-02
+4,Wildlife,0,0,18,Intakes,February,2015,2015-02
+5,Disposal Request,29,6,3,Intakes,February,2015,2015-02
+6,Euthanasia Request,48,6,0,Intakes,February,2015,2015-02
+7,Returns,4,1,0,Intakes,February,2015,2015-02
+10,Adoption,67,34,0,Outcomes,February,2015,2015-02
+11,Returned to Owner,73,3,0,Outcomes,February,2015,2015-02
+12,Transfer,252,276,64,Outcomes,February,2015,2015-02
+13,Euthanasia by Request,46,6,0,Outcomes,February,2015,2015-02
+14,Other Euthanasia,141,26,8,Outcomes,February,2015,2015-02
+15,Died in Care,2,1,2,Outcomes,February,2015,2015-02
+16,Dead on Arrival,29,17,6,Outcomes,February,2015,2015-02
+1,Stray,290,156,2,Intakes,February,2016,2016-02
+2,Owner Surrender,203,129,22,Intakes,February,2016,2016-02
+3,Confiscate,42,10,3,Intakes,February,2016,2016-02
+4,Wildlife,0,0,37,Intakes,February,2016,2016-02
+5,Disposal Request,38,15,1,Intakes,February,2016,2016-02
+6,Euthanasia Request,48,8,6,Intakes,February,2016,2016-02
+7,Returns,1,2,0,Intakes,February,2016,2016-02
+10,Adoption,31,40,0,Outcomes,February,2016,2016-02
+11,Returned to Owner,74,6,0,Outcomes,February,2016,2016-02
+12,Transfer,281,223,33,Outcomes,February,2016,2016-02
+13,Euthanasia by Request,44,8,6,Outcomes,February,2016,2016-02
+14,Other Euthanasia,135,19,22,Outcomes,February,2016,2016-02
+15,Died in Care,5,3,4,Outcomes,February,2016,2016-02
+16,Dead on Arrival,46,21,10,Outcomes,February,2016,2016-02
+1,Stray,243,157,3,Intakes,February,2017,2017-02
+2,Owner Surrender,227,122,20,Intakes,February,2017,2017-02
+3,Confiscate,41,6,2,Intakes,February,2017,2017-02
+4,Wildlife,0,0,62,Intakes,February,2017,2017-02
+5,Disposal Request,25,16,2,Intakes,February,2017,2017-02
+6,Euthanasia Request,44,7,0,Intakes,February,2017,2017-02
+7,Returns,2,1,0,Intakes,February,2017,2017-02
+10,Adoption,49,33,0,Outcomes,February,2017,2017-02
+11,Returned to Owner,85,8,0,Outcomes,February,2017,2017-02
+12,Transfer,303,220,42,Outcomes,February,2017,2017-02
+13,Euthanasia by Request,40,6,0,Outcomes,February,2017,2017-02
+14,Other Euthanasia,52,16,34,Outcomes,February,2017,2017-02
+15,Died in Care,5,2,1,Outcomes,February,2017,2017-02
+16,Dead on Arrival,34,15,14,Outcomes,February,2017,2017-02
+1,Stray,304,178,1,Intakes,February,2022,2022-02
+2,Owner Surrender,37,38,15,Intakes,February,2022,2022-02
+3,Confiscate,13,5,1,Intakes,February,2022,2022-02
+4,Wildlife,0,0,22,Intakes,February,2022,2022-02
+5,Disposal Request,14,10,2,Intakes,February,2022,2022-02
+6,Euthanasia Request,51,16,0,Intakes,February,2022,2022-02
+7,Returns,3,1,0,Intakes,February,2022,2022-02
+10,Adoption,42,21,1,Outcomes,February,2022,2022-02
+11,Strays Returned to Owner,64,4,0,Outcomes,February,2022,2022-02
+12,Other Returned to Owner,5,2,0,Outcomes,February,2022,2022-02
+13,Transfer,186,185,19,Outcomes,February,2022,2022-02
+14,Euthanasia by Request,48,10,0,Outcomes,February,2022,2022-02
+15,Other Euthanasia,42,17,9,Outcomes,February,2022,2022-02
+16,Died in Care,2,3,5,Outcomes,February,2022,2022-02
+17,Dead on Arrival,23,11,5,Outcomes,February,2022,2022-02
+1,Stray,247,154,7,Intakes,February,2018,2018-02
+2,Owner Surrender,153,139,17,Intakes,February,2018,2018-02
+3,Confiscate,44,10,0,Intakes,February,2018,2018-02
+4,Wildlife,0,0,43,Intakes,February,2018,2018-02
+5,Disposal Request,31,13,2,Intakes,February,2018,2018-02
+6,Euthanasia Request,57,10,0,Intakes,February,2018,2018-02
+7,Returns,2,1,0,Intakes,February,2018,2018-02
+8,QUARANTINE,9,0,0,Outcomes,February,2018,2018-02
+11,Adoption,58,22,0,Outcomes,February,2018,2018-02
+12,Returned to Owner,85,7,0,Outcomes,February,2018,2018-02
+13,Transfer,242,241,34,Outcomes,February,2018,2018-02
+14,Euthanasia by Request,54,8,0,Outcomes,February,2018,2018-02
+15,Other Euthanasia,19,14,21,Outcomes,February,2018,2018-02
+16,Died in Care,2,1,0,Outcomes,February,2018,2018-02
+17,Dead on Arrival,34,14,14,Outcomes,February,2018,2018-02
+18,RELOCATE,0,0,1,Outcomes,February,2018,2018-02
+1,Stray,273,189,3,Intakes,February,2019,2019-02
+2,Owner Surrender,177,118,14,Intakes,February,2019,2019-02
+3,Confiscate,42,16,0,Intakes,February,2019,2019-02
+4,Wildlife,0,0,37,Intakes,February,2019,2019-02
+5,Disposal Request,37,19,2,Intakes,February,2019,2019-02
+6,Euthanasia Request,65,11,0,Intakes,February,2019,2019-02
+7,Returns,4,0,0,Intakes,February,2019,2019-02
+8,Quarantine,3,1,0,Intakes,February,2019,2019-02
+11,Adoption,95,76,0,Outcomes,February,2019,2019-02
+12,Strays Returned to Owner,79,4,0,Outcomes,February,2019,2019-02
+13,Other Returned to Owner,33,5,2,Outcomes,February,2019,2019-02
+14,Transfer,235,246,24,Outcomes,February,2019,2019-02
+15,Euthanasia by Request,59,9,0,Outcomes,February,2019,2019-02
+16,Other Euthanasia,21,11,24,Outcomes,February,2019,2019-02
+17,Died in Care,1,2,0,Outcomes,February,2019,2019-02
+18,Dead on Arrival,40,22,5,Outcomes,February,2019,2019-02
+1,Stray,295,208,13,Intakes,February,2020,2020-02
+2,Owner Surrender,155,150,13,Intakes,February,2020,2020-02
+3,Confiscate,63,33,23,Intakes,February,2020,2020-02
+4,Wildlife,0,0,71,Intakes,February,2020,2020-02
+5,Disposal Request,32,17,1,Intakes,February,2020,2020-02
+6,Euthanasia Request,43,7,2,Intakes,February,2020,2020-02
+7,Returns,4,4,0,Intakes,February,2020,2020-02
+8,Quarantine,9,0,0,Intakes,February,2020,2020-02
+11,Adoption,78,85,3,Outcomes,February,2020,2020-02
+12,Strays Returned to Owner,85,5,0,Outcomes,February,2020,2020-02
+13,Other Returned to Owner,33,8,1,Outcomes,February,2020,2020-02
+14,Transfer,287,248,46,Outcomes,February,2020,2020-02
+15,Euthanasia by Request,38,7,2,Outcomes,February,2020,2020-02
+16,Other Euthanasia,29,15,44,Outcomes,February,2020,2020-02
+17,Died in Care,3,2,2,Outcomes,February,2020,2020-02
+18,Dead on Arrival,33,19,16,Outcomes,February,2020,2020-02
+1,Stray,181,239,3,Intakes,February,2021,2021-02
+2,Owner Surrender,53,86,4,Intakes,February,2021,2021-02
+3,Confiscate,19,11,2,Intakes,February,2021,2021-02
+4,Wildlife,0,0,42,Intakes,February,2021,2021-02
+5,Disposal Request,33,11,5,Intakes,February,2021,2021-02
+6,Euthanasia Request,45,7,1,Intakes,February,2021,2021-02
+7,Returns,1,0,0,Intakes,February,2021,2021-02
+10,Adoption,17,2,0,Outcomes,February,2021,2021-02
+11,Strays Returned to Owner,42,3,0,Outcomes,February,2021,2021-02
+12,Other Returned to Owner,10,1,0,Outcomes,February,2021,2021-02
+13,Transfer,161,321,20,Outcomes,February,2021,2021-02
+14,Euthanasia by Request,41,5,1,Outcomes,February,2021,2021-02
+15,Other Euthanasia,8,11,18,Outcomes,February,2021,2021-02
+16,Died in Care,2,3,4,Outcomes,February,2021,2021-02
+17,Dead on Arrival,40,12,10,Outcomes,February,2021,2021-02
+1,Stray,352,218,9,Intakes,January,2015,2015-01
+2,Owner Surrender,261,143,25,Intakes,January,2015,2015-01
+3,Confiscate,70,14,1,Intakes,January,2015,2015-01
+4,Wildlife,0,0,14,Intakes,January,2015,2015-01
+5,Disposal Request,37,18,2,Intakes,January,2015,2015-01
+6,Euthanasia Request,44,6,0,Intakes,January,2015,2015-01
+7,Returns,4,0,0,Intakes,January,2015,2015-01
+10,Adoption,59,29,0,Outcomes,January,2015,2015-01
+11,Returned to Owner,90,5,0,Outcomes,January,2015,2015-01
+12,Transfer,371,304,43,Outcomes,January,2015,2015-01
+13,Euthanasia by Request,44,6,0,Outcomes,January,2015,2015-01
+14,Other Euthanasia,165,28,5,Outcomes,January,2015,2015-01
+15,Died in Care,7,4,2,Outcomes,January,2015,2015-01
+16,Dead on Arrival,46,25,8,Outcomes,January,2015,2015-01
+17,RELOCATE,0,1,0,Outcomes,January,2015,2015-01
+1,Stray,272,138,6,Intakes,January,2016,2016-01
+2,Owner Surrender,207,129,25,Intakes,January,2016,2016-01
+3,Confiscate,72,2,1,Intakes,January,2016,2016-01
+4,Wildlife,0,0,30,Intakes,January,2016,2016-01
+5,Disposal Request,50,17,3,Intakes,January,2016,2016-01
+6,Euthanasia Request,45,4,5,Intakes,January,2016,2016-01
+9,Adoption,43,51,0,Outcomes,January,2016,2016-01
+10,Returned to Owner,89,3,0,Outcomes,January,2016,2016-01
+11,Transfer,278,200,36,Outcomes,January,2016,2016-01
+12,Euthanasia by Request,42,4,5,Outcomes,January,2016,2016-01
+13,Other Euthanasia,153,24,16,Outcomes,January,2016,2016-01
+14,Died in Care,3,3,0,Outcomes,January,2016,2016-01
+15,Dead on Arrival,57,18,9,Outcomes,January,2016,2016-01
+1,Stray,279,155,7,Intakes,January,2017,2017-01
+2,Owner Surrender,228,89,9,Intakes,January,2017,2017-01
+3,Confiscate,46,4,0,Intakes,January,2017,2017-01
+4,Wildlife,0,0,46,Intakes,January,2017,2017-01
+5,Disposal Request,35,16,1,Intakes,January,2017,2017-01
+6,Euthanasia Request,48,8,0,Intakes,January,2017,2017-01
+7,Returns,1,1,0,Intakes,January,2017,2017-01
+10,Adoption,51,50,0,Outcomes,January,2017,2017-01
+11,Returned to Owner,92,3,0,Outcomes,January,2017,2017-01
+12,Transfer,325,225,31,Outcomes,January,2017,2017-01
+13,Euthanasia by Request,50,7,0,Outcomes,January,2017,2017-01
+14,Other Euthanasia,60,22,21,Outcomes,January,2017,2017-01
+15,Died in Care,6,3,0,Outcomes,January,2017,2017-01
+16,Dead on Arrival,40,20,12,Outcomes,January,2017,2017-01
+1,Stray,243,146,6,Intakes,January,2018,2018-01
+2,Owner Surrender,181,145,12,Intakes,January,2018,2018-01
+3,Confiscate,58,10,0,Intakes,January,2018,2018-01
+4,Wildlife,0,0,53,Intakes,January,2018,2018-01
+5,Disposal Request,38,19,1,Intakes,January,2018,2018-01
+6,Euthanasia Request,88,12,0,Intakes,January,2018,2018-01
+7,Returns,7,3,0,Intakes,January,2018,2018-01
+10,Adoption,122,55,0,Outcomes,January,2018,2018-01
+11,Returned to Owner,85,3,0,Outcomes,January,2018,2018-01
+12,Transfer,303,279,33,Outcomes,January,2018,2018-01
+13,Euthanasia by Request,80,12,0,Outcomes,January,2018,2018-01
+14,Other Euthanasia,34,17,28,Outcomes,January,2018,2018-01
+15,Died in Care,0,2,2,Outcomes,January,2018,2018-01
+16,Dead on Arrival,47,18,11,Outcomes,January,2018,2018-01
+17,MISSING,1,0,0,Outcomes,January,2018,2018-01
+1,Stray,345,208,5,Intakes,January,2020,2020-01
+2,Owner Surrender,175,205,17,Intakes,January,2020,2020-01
+3,Confiscate,42,21,3,Intakes,January,2020,2020-01
+4,Wildlife,0,0,50,Intakes,January,2020,2020-01
+5,Disposal Request,42,23,3,Intakes,January,2020,2020-01
+6,Euthanasia Request,69,15,1,Intakes,January,2020,2020-01
+7,Returns,5,9,0,Intakes,January,2020,2020-01
+8,Quarantine,8,0,0,Intakes,January,2020,2020-01
+11,Adoption,132,114,0,Outcomes,January,2020,2020-01
+12,Strays Returned to Owner,92,3,0,Outcomes,January,2020,2020-01
+13,Other Returned to Owner,23,2,3,Outcomes,January,2020,2020-01
+14,Transfer,308,314,36,Outcomes,January,2020,2020-01
+15,Euthanasia by Request,58,14,1,Outcomes,January,2020,2020-01
+16,Other Euthanasia,42,12,30,Outcomes,January,2020,2020-01
+17,Died in Care,2,1,0,Outcomes,January,2020,2020-01
+18,Dead on Arrival,42,28,11,Outcomes,January,2020,2020-01
+1,Stray,293,204,12,Intakes,January,2022,2022-01
+2,Owner Surrender,29,68,3,Intakes,January,2022,2022-01
+3,Confiscate,34,12,1,Intakes,January,2022,2022-01
+4,Wildlife,0,0,26,Intakes,January,2022,2022-01
+5,Disposal Request,22,5,2,Intakes,January,2022,2022-01
+6,Euthanasia Request,70,12,1,Intakes,January,2022,2022-01
+7,Returns,2,2,0,Intakes,January,2022,2022-01
+10,Adoption,46,48,0,Outcomes,January,2022,2022-01
+11,Strays Returned to Owner,82,4,0,Outcomes,January,2022,2022-01
+12,Other Returned to Owner,11,1,0,Outcomes,January,2022,2022-01
+13,Transfer,205,262,21,Outcomes,January,2022,2022-01
+14,Euthanasia by Request,52,10,1,Outcomes,January,2022,2022-01
+15,Other Euthanasia,27,9,16,Outcomes,January,2022,2022-01
+16,Died in Care,1,0,1,Outcomes,January,2022,2022-01
+17,Dead on Arrival,25,12,5,Outcomes,January,2022,2022-01
+1,Stray,243,157,4,Intakes,January,2019,2019-01
+2,Owner Surrender,167,127,5,Intakes,January,2019,2019-01
+3,Confiscate,53,13,0,Intakes,January,2019,2019-01
+4,Wildlife,0,0,30,Intakes,January,2019,2019-01
+5,Disposal Request,41,14,5,Intakes,January,2019,2019-01
+6,Euthanasia Request,51,5,0,Intakes,January,2019,2019-01
+7,Returns,3,1,0,Intakes,January,2019,2019-01
+8,Quarantine,11,1,0,Intakes,January,2019,2019-01
+11,Adoption,71,71,0,Outcomes,January,2019,2019-01
+12,Strays Returned to Owner,64,3,0,Outcomes,January,2019,2019-01
+13,Other Returned to Owner,29,1,0,Outcomes,January,2019,2019-01
+14,Transfer,282,285,21,Outcomes,January,2019,2019-01
+15,Euthanasia by Request,45,2,0,Outcomes,January,2019,2019-01
+16,Other Euthanasia,30,22,14,Outcomes,January,2019,2019-01
+17,Died in Care,3,0,1,Outcomes,January,2019,2019-01
+18,Dead on Arrival,41,15,12,Outcomes,January,2019,2019-01
+1,Stray,185,166,15,Intakes,January,2021,2021-01
+2,Owner Surrender,66,44,4,Intakes,January,2021,2021-01
+3,Confiscate,23,3,4,Intakes,January,2021,2021-01
+4,Wildlife,0,0,25,Intakes,January,2021,2021-01
+5,Disposal Request,24,5,3,Intakes,January,2021,2021-01
+6,Euthanasia Request,49,7,2,Intakes,January,2021,2021-01
+7,Returns,3,0,0,Intakes,January,2021,2021-01
+8,Quarantine,8,0,0,Intakes,January,2021,2021-01
+11,Adoption,29,24,0,Outcomes,January,2021,2021-01
+12,Strays Returned to Owner,49,3,0,Outcomes,January,2021,2021-01
+13,Other Returned to Owner,23,2,0,Outcomes,January,2021,2021-01
+14,Transfer,159,194,25,Outcomes,January,2021,2021-01
+15,Euthanasia by Request,41,6,2,Outcomes,January,2021,2021-01
+16,Other Euthanasia,7,12,13,Outcomes,January,2021,2021-01
+17,Died in Care,2,7,5,Outcomes,January,2021,2021-01
+18,Dead on Arrival,27,10,10,Outcomes,January,2021,2021-01
+1,Stray,532,740,20,Intakes,July,2014,2014-07
+2,Owner Surrender,302,336,14,Intakes,July,2014,2014-07
+3,Confiscate,73,16,1,Intakes,July,2014,2014-07
+4,Wildlife,0,0,124,Intakes,July,2014,2014-07
+5,Disposal Request,58,10,2,Intakes,July,2014,2014-07
+6,Euthanasia Request,67,21,0,Intakes,July,2014,2014-07
+7,Returns,5,0,0,Intakes,July,2014,2014-07
+10,Adoption,70,36,0,Outcomes,July,2014,2014-07
+11,Returned to Owner,149,6,0,Outcomes,July,2014,2014-07
+12,Transfer,305,605,88,Outcomes,July,2014,2014-07
+13,Euthanasia by Request,63,21,0,Outcomes,July,2014,2014-07
+14,Other Euthanasia,340,356,41,Outcomes,July,2014,2014-07
+15,Died in Care,15,43,11,Outcomes,July,2014,2014-07
+16,Dead on Arrival,75,30,15,Outcomes,July,2014,2014-07
+17,RELOCATE,0,0,1,Outcomes,July,2014,2014-07
+1,Stray,397,562,14,Intakes,July,2015,2015-07
+2,Owner Surrender,249,191,7,Intakes,July,2015,2015-07
+3,Confiscate,111,13,3,Intakes,July,2015,2015-07
+4,Wildlife,0,0,87,Intakes,July,2015,2015-07
+5,Disposal Request,53,17,4,Intakes,July,2015,2015-07
+6,Euthanasia Request,58,17,1,Intakes,July,2015,2015-07
+7,Returns,3,2,0,Intakes,July,2015,2015-07
+10,Adoption,25,45,0,Outcomes,July,2015,2015-07
+11,Returned to Owner,136,9,0,Outcomes,July,2015,2015-07
+12,Transfer,302,461,65,Outcomes,July,2015,2015-07
+13,Euthanasia by Request,57,16,1,Outcomes,July,2015,2015-07
+14,Other Euthanasia,352,159,19,Outcomes,July,2015,2015-07
+15,Died in Care,8,15,5,Outcomes,July,2015,2015-07
+16,Dead on Arrival,61,24,17,Outcomes,July,2015,2015-07
+17,RELOCATE,0,0,1,Outcomes,July,2015,2015-07
+1,Stray,349,358,5,Intakes,July,2016,2016-07
+2,Owner Surrender,297,174,20,Intakes,July,2016,2016-07
+3,Confiscate,92,10,0,Intakes,July,2016,2016-07
+4,Wildlife,0,0,133,Intakes,July,2016,2016-07
+5,Disposal Request,64,18,2,Intakes,July,2016,2016-07
+6,Euthanasia Request,52,16,1,Intakes,July,2016,2016-07
+7,Returns,9,6,0,Intakes,July,2016,2016-07
+10,Adoption,38,30,0,Outcomes,July,2016,2016-07
+11,Returned to Owner,126,9,0,Outcomes,July,2016,2016-07
+12,Transfer,301,388,88,Outcomes,July,2016,2016-07
+13,Euthanasia by Request,48,15,1,Outcomes,July,2016,2016-07
+14,Other Euthanasia,177,76,43,Outcomes,July,2016,2016-07
+15,Died in Care,12,15,9,Outcomes,July,2016,2016-07
+16,Dead on Arrival,82,18,26,Outcomes,July,2016,2016-07
+17,RELOCATE,0,0,1,Outcomes,July,2016,2016-07
+1,Stray,325,385,19,Intakes,July,2017,2017-07
+2,Owner Surrender,201,141,7,Intakes,July,2017,2017-07
+3,Confiscate,76,6,0,Intakes,July,2017,2017-07
+4,Wildlife,0,0,118,Intakes,July,2017,2017-07
+5,Disposal Request,53,10,19,Intakes,July,2017,2017-07
+6,Euthanasia Request,65,9,0,Intakes,July,2017,2017-07
+7,Returns,3,2,0,Intakes,July,2017,2017-07
+10,Adoption,58,44,0,Outcomes,July,2017,2017-07
+11,Returned to Owner,138,16,1,Outcomes,July,2017,2017-07
+12,Transfer,305,414,88,Outcomes,July,2017,2017-07
+13,Euthanasia by Request,63,9,0,Outcomes,July,2017,2017-07
+14,Other Euthanasia,88,50,29,Outcomes,July,2017,2017-07
+15,Died in Care,3,6,11,Outcomes,July,2017,2017-07
+16,Dead on Arrival,59,27,36,Outcomes,July,2017,2017-07
+1,Stray,327,370,24,Intakes,July,2018,2018-07
+2,Owner Surrender,199,243,15,Intakes,July,2018,2018-07
+3,Confiscate,29,14,5,Intakes,July,2018,2018-07
+4,Wildlife,0,0,141,Intakes,July,2018,2018-07
+5,Disposal Request,53,28,1,Intakes,July,2018,2018-07
+6,Euthanasia Request,68,18,0,Intakes,July,2018,2018-07
+7,Returns,8,2,0,Intakes,July,2018,2018-07
+8,Quarantine,17,1,0,Intakes,July,2018,2018-07
+11,Adoption,110,94,0,Outcomes,July,2018,2018-07
+12,Strays Returned to Owner,94,9,0,Outcomes,July,2018,2018-07
+13,Other Returned to Owner,37,7,0,Outcomes,July,2018,2018-07
+14,Transfer,332,408,121,Outcomes,July,2018,2018-07
+15,Euthanasia by Request,58,18,0,Outcomes,July,2018,2018-07
+16,Other Euthanasia,46,48,35,Outcomes,July,2018,2018-07
+17,Died in Care,2,15,19,Outcomes,July,2018,2018-07
+18,Dead on Arrival,64,33,16,Outcomes,July,2018,2018-07
+19,Relocate,0,0,1,Outcomes,July,2018,2018-07
+1,Stray,425,472,10,Intakes,July,2019,2019-07
+2,Owner Surrender,229,215,29,Intakes,July,2019,2019-07
+3,Confiscate,39,18,0,Intakes,July,2019,2019-07
+4,Wildlife,0,0,174,Intakes,July,2019,2019-07
+5,Disposal Request,45,21,6,Intakes,July,2019,2019-07
+6,Euthanasia Request,99,12,1,Intakes,July,2019,2019-07
+7,Returns,9,3,0,Intakes,July,2019,2019-07
+8,Quarantine,13,1,0,Intakes,July,2019,2019-07
+9,FOSTER,1,14,0,Outcomes,July,2019,2019-07
+12,Adoption,160,129,10,Outcomes,July,2019,2019-07
+13,Strays Returned to Owner,140,10,0,Outcomes,July,2019,2019-07
+14,Other Returned to Owner,27,6,2,Outcomes,July,2019,2019-07
+15,Transfer,273,506,149,Outcomes,July,2019,2019-07
+16,Euthanasia by Request,91,9,1,Outcomes,July,2019,2019-07
+17,Other Euthanasia,97,47,29,Outcomes,July,2019,2019-07
+18,Died in Care,4,11,12,Outcomes,July,2019,2019-07
+19,Dead on Arrival,48,27,25,Outcomes,July,2019,2019-07
+20,Relocate,0,0,1,Outcomes,July,2019,2019-07
+21,FOSTER,6,14,0,Outcomes,July,2019,2019-07
+1,Stray,231,412,6,Intakes,July,2020,2020-07
+2,Owner Surrender,63,67,16,Intakes,July,2020,2020-07
+3,Confiscate,21,10,1,Intakes,July,2020,2020-07
+4,Wildlife,0,0,137,Intakes,July,2020,2020-07
+5,Disposal Request,28,11,2,Intakes,July,2020,2020-07
+6,Euthanasia Request,54,16,2,Intakes,July,2020,2020-07
+7,Quarantine,3,0,0,Intakes,July,2020,2020-07
+10,Adoption,30,19,1,Outcomes,July,2020,2020-07
+11,Strays Returned to Owner,59,1,0,Outcomes,July,2020,2020-07
+12,Other Returned to Owner,12,1,1,Outcomes,July,2020,2020-07
+13,Transfer,190,452,79,Outcomes,July,2020,2020-07
+14,Euthanasia by Request,49,9,1,Outcomes,July,2020,2020-07
+15,Other Euthanasia,15,31,46,Outcomes,July,2020,2020-07
+16,Died in Care,2,8,15,Outcomes,July,2020,2020-07
+17,Dead on Arrival,30,17,21,Outcomes,July,2020,2020-07
+1,Stray,328,403,12,Intakes,July,2021,2021-07
+2,Owner Surrender,37,68,4,Intakes,July,2021,2021-07
+3,Confiscate,17,16,7,Intakes,July,2021,2021-07
+4,Wildlife,0,0,122,Intakes,July,2021,2021-07
+5,Disposal Request,38,8,9,Intakes,July,2021,2021-07
+6,Euthanasia Request,79,14,5,Intakes,July,2021,2021-07
+7,Returns,3,0,0,Intakes,July,2021,2021-07
+8,Quarantine,4,0,0,Intakes,July,2021,2021-07
+11,Adoption,44,21,3,Outcomes,July,2021,2021-07
+12,Strays Returned to Owner,74,4,0,Outcomes,July,2021,2021-07
+13,Other Returned to Owner,12,2,2,Outcomes,July,2021,2021-07
+14,Transfer,157,397,93,Outcomes,July,2021,2021-07
+15,Euthanasia by Request,75,9,5,Outcomes,July,2021,2021-07
+16,Other Euthanasia,32,33,28,Outcomes,July,2021,2021-07
+17,Died in Care,3,13,13,Outcomes,July,2021,2021-07
+18,Dead on Arrival,37,11,20,Outcomes,July,2021,2021-07
+1,Stray,394,360,17,Intakes,June,2015,2015-06
+2,Owner Surrender,257,211,2,Intakes,June,2015,2015-06
+3,Confiscate,66,18,0,Intakes,June,2015,2015-06
+4,Wildlife,0,0,130,Intakes,June,2015,2015-06
+5,Disposal Request,40,13,6,Intakes,June,2015,2015-06
+6,Euthanasia Request,49,7,0,Intakes,June,2015,2015-06
+7,Returns,4,2,0,Intakes,June,2015,2015-06
+10,Adoption,43,33,0,Outcomes,June,2015,2015-06
+11,Returned to Owner,124,6,0,Outcomes,June,2015,2015-06
+12,Transfer,215,467,75,Outcomes,June,2015,2015-06
+13,Euthanasia by Request,47,6,0,Outcomes,June,2015,2015-06
+14,Other Euthanasia,246,71,47,Outcomes,June,2015,2015-06
+15,Died in Care,4,15,7,Outcomes,June,2015,2015-06
+16,Dead on Arrival,56,24,27,Outcomes,June,2015,2015-06
+1,Stray,284,334,8,Intakes,June,2016,2016-06
+2,Owner Surrender,198,162,12,Intakes,June,2016,2016-06
+3,Confiscate,77,7,0,Intakes,June,2016,2016-06
+4,Wildlife,0,0,184,Intakes,June,2016,2016-06
+5,Disposal Request,48,9,6,Intakes,June,2016,2016-06
+6,Euthanasia Request,46,10,0,Intakes,June,2016,2016-06
+7,Returns,1,2,0,Intakes,June,2016,2016-06
+10,Adoption,54,43,0,Outcomes,June,2016,2016-06
+11,Returned to Owner,119,12,2,Outcomes,June,2016,2016-06
+12,Transfer,234,365,108,Outcomes,June,2016,2016-06
+13,Euthanasia by Request,46,10,0,Outcomes,June,2016,2016-06
+14,Other Euthanasia,145,44,58,Outcomes,June,2016,2016-06
+15,Died in Care,3,5,9,Outcomes,June,2016,2016-06
+16,Dead on Arrival,54,15,27,Outcomes,June,2016,2016-06
+1,Stray,255,396,11,Intakes,June,2017,2017-06
+2,Owner Surrender,176,179,19,Intakes,June,2017,2017-06
+3,Confiscate,41,8,0,Intakes,June,2017,2017-06
+4,Wildlife,0,0,156,Intakes,June,2017,2017-06
+5,Disposal Request,32,24,11,Intakes,June,2017,2017-06
+6,Euthanasia Request,56,14,0,Intakes,June,2017,2017-06
+7,Returns,5,0,0,Intakes,June,2017,2017-06
+10,Adoption,53,63,0,Outcomes,June,2017,2017-06
+11,Returned to Owner,115,13,3,Outcomes,June,2017,2017-06
+12,Transfer,228,378,88,Outcomes,June,2017,2017-06
+13,Euthanasia by Request,51,12,0,Outcomes,June,2017,2017-06
+14,Other Euthanasia,55,53,61,Outcomes,June,2017,2017-06
+15,Died in Care,4,11,4,Outcomes,June,2017,2017-06
+16,Dead on Arrival,37,30,37,Outcomes,June,2017,2017-06
+1,Stray,306,325,13,Intakes,June,2018,2018-06
+2,Owner Surrender,186,243,24,Intakes,June,2018,2018-06
+3,Confiscate,35,6,2,Intakes,June,2018,2018-06
+4,Wildlife,0,0,136,Intakes,June,2018,2018-06
+5,Disposal Request,56,24,3,Intakes,June,2018,2018-06
+6,Euthanasia Request,59,17,0,Intakes,June,2018,2018-06
+7,Returns,4,1,0,Intakes,June,2018,2018-06
+8,Quarantine,11,0,0,Intakes,June,2018,2018-06
+11,Adoption,98,41,0,Outcomes,June,2018,2018-06
+12,Strays Returned to Owner,82,6,0,Outcomes,June,2018,2018-06
+13,Other Returned to Owner,32,4,0,Outcomes,June,2018,2018-06
+14,Transfer,256,427,104,Outcomes,June,2018,2018-06
+15,Euthanasia by Request,55,15,0,Outcomes,June,2018,2018-06
+16,Other Euthanasia,67,38,50,Outcomes,June,2018,2018-06
+17,Died in Care,9,8,6,Outcomes,June,2018,2018-06
+18,Dead on Arrival,52,25,20,Outcomes,June,2018,2018-06
+1,Stray,363,448,8,Intakes,June,2019,2019-06
+2,Owner Surrender,203,218,1,Intakes,June,2019,2019-06
+3,Confiscate,58,3,124,Intakes,June,2019,2019-06
+4,Wildlife,0,0,124,Intakes,June,2019,2019-06
+5,Disposal Request,46,22,7,Intakes,June,2019,2019-06
+6,Euthanasia Request,51,15,0,Intakes,June,2019,2019-06
+7,Returns,9,1,0,Intakes,June,2019,2019-06
+8,Quarantine,11,0,0,Intakes,June,2019,2019-06
+9,FOSTER,1,7,0,Outcomes,June,2019,2019-06
+12,Adoption,137,142,0,Outcomes,June,2019,2019-06
+13,Strays Returned to Owner,122,6,0,Outcomes,June,2019,2019-06
+14,Other Returned to Owner,29,7,0,Outcomes,June,2019,2019-06
+15,Transfer,299,409,158,Outcomes,June,2019,2019-06
+16,Euthanasia by Request,49,13,0,Outcomes,June,2019,2019-06
+17,Other Euthanasia,69,37,34,Outcomes,June,2019,2019-06
+18,Died in Care,1,12,10,Outcomes,June,2019,2019-06
+19,Dead on Arrival,44,24,29,Outcomes,June,2019,2019-06
+20,FOSTER,0,8,0,Outcomes,June,2019,2019-06
+1,Stray,178,280,6,Intakes,June,2020,2020-06
+2,Owner Surrender,67,45,2,Intakes,June,2020,2020-06
+3,Confiscate,4,5,0,Intakes,June,2020,2020-06
+4,Wildlife,0,0,140,Intakes,June,2020,2020-06
+5,Disposal Request,13,10,7,Intakes,June,2020,2020-06
+6,Euthanasia Request,33,10,0,Intakes,June,2020,2020-06
+7,Returns,1,0,0,Intakes,June,2020,2020-06
+8,Quarantine,1,0,0,Intakes,June,2020,2020-06
+11,Adoption,3,2,0,Outcomes,June,2020,2020-06
+12,Strays Returned to Owner,64,0,0,Outcomes,June,2020,2020-06
+13,Other Returned to Owner,9,1,0,Outcomes,June,2020,2020-06
+14,Transfer,142,242,72,Outcomes,June,2020,2020-06
+15,Euthanasia by Request,30,7,0,Outcomes,June,2020,2020-06
+16,Other Euthanasia,15,22,56,Outcomes,June,2020,2020-06
+17,Died in Care,0,1,16,Outcomes,June,2020,2020-06
+18,Dead on Arrival,15,12,10,Outcomes,June,2020,2020-06
+1,Stray,267,423,17,Intakes,June,2021,2021-06
+2,Owner Surrender,62,70,9,Intakes,June,2021,2021-06
+3,Confiscate,24,6,0,Intakes,June,2021,2021-06
+4,Wildlife,0,0,146,Intakes,June,2021,2021-06
+5,Disposal Request,33,10,2,Intakes,June,2021,2021-06
+6,Euthanasia Request,66,10,1,Intakes,June,2021,2021-06
+7,Returns,4,2,0,Intakes,June,2021,2021-06
+8,Quarantine,3,0,0,Intakes,June,2021,2021-06
+11,Adoption,48,25,3,Outcomes,June,2021,2021-06
+12,Strays Returned to Owner,94,6,0,Outcomes,June,2021,2021-06
+13,Other Returned to Owner,8,1,0,Outcomes,June,2021,2021-06
+14,Transfer,173,427,109,Outcomes,June,2021,2021-06
+15,Euthanasia by Request,56,9,1,Outcomes,June,2021,2021-06
+16,Other Euthanasia,18,26,27,Outcomes,June,2021,2021-06
+17,Died in Care,2,1,20,Outcomes,June,2021,2021-06
+18,Dead on Arrival,33,13,17,Outcomes,June,2021,2021-06
+1,Stray,401,270,20,Intakes,March,2015,2015-03
+2,Owner Surrender,324,216,8,Intakes,March,2015,2015-03
+3,Confiscate,76,27,1,Intakes,March,2015,2015-03
+4,Wildlife,0,0,30,Intakes,March,2015,2015-03
+5,Disposal Request,56,9,2,Intakes,March,2015,2015-03
+6,Euthanasia Request,52,14,1,Intakes,March,2015,2015-03
+7,Returns,2,2,0,Intakes,March,2015,2015-03
+10,Adoption,81,28,0,Outcomes,March,2015,2015-03
+11,Returned to Owner,112,11,0,Outcomes,March,2015,2015-03
+12,Transfer,383,380,34,Outcomes,March,2015,2015-03
+13,Euthanasia by Request,50,13,1,Outcomes,March,2015,2015-03
+14,Other Euthanasia,218,32,15,Outcomes,March,2015,2015-03
+15,Died in Care,3,5,0,Outcomes,March,2015,2015-03
+16,Dead on Arrival,67,25,11,Outcomes,March,2015,2015-03
+1,Stray,334,223,11,Intakes,March,2016,2016-03
+2,Owner Surrender,222,118,18,Intakes,March,2016,2016-03
+3,Confiscate,60,7,1,Intakes,March,2016,2016-03
+4,Wildlife,0,0,67,Intakes,March,2016,2016-03
+5,Disposal Request,42,16,2,Intakes,March,2016,2016-03
+6,Euthanasia Request,50,13,2,Intakes,March,2016,2016-03
+7,Returns,1,2,0,Intakes,March,2016,2016-03
+10,Adoption,59,47,0,Outcomes,March,2016,2016-03
+11,Returned to Owner,110,7,1,Outcomes,March,2016,2016-03
+12,Transfer,244,258,48,Outcomes,March,2016,2016-03
+13,Euthanasia by Request,50,13,2,Outcomes,March,2016,2016-03
+14,Other Euthanasia,184,24,31,Outcomes,March,2016,2016-03
+15,Died in Care,3,5,1,Outcomes,March,2016,2016-03
+16,Dead on Arrival,45,22,15,Outcomes,March,2016,2016-03
+1,Stray,271,267,7,Intakes,March,2017,2017-03
+2,Owner Surrender,201,127,10,Intakes,March,2017,2017-03
+3,Confiscate,41,16,0,Intakes,March,2017,2017-03
+4,Wildlife,0,0,85,Intakes,March,2017,2017-03
+5,Disposal Request,36,15,8,Intakes,March,2017,2017-03
+6,Euthanasia Request,38,8,0,Intakes,March,2017,2017-03
+7,Returns,5,1,0,Intakes,March,2017,2017-03
+10,Adoption,41,35,0,Outcomes,March,2017,2017-03
+11,Returned to Owner,113,3,0,Outcomes,March,2017,2017-03
+12,Transfer,266,351,39,Outcomes,March,2017,2017-03
+13,Euthanasia by Request,36,7,0,Outcomes,March,2017,2017-03
+14,Other Euthanasia,92,14,41,Outcomes,March,2017,2017-03
+15,Died in Care,1,3,10,Outcomes,March,2017,2017-03
+16,Dead on Arrival,46,19,17,Outcomes,March,2017,2017-03
+1,Stray,334,210,9,Intakes,March,2018,2018-03
+2,Owner Surrender,217,300,15,Intakes,March,2018,2018-03
+3,Confiscate,29,22,2,Intakes,March,2018,2018-03
+4,Wildlife,0,0,63,Intakes,March,2018,2018-03
+5,Disposal Request,30,15,2,Intakes,March,2018,2018-03
+6,Euthanasia Request,56,10,1,Intakes,March,2018,2018-03
+7,Returns,6,2,0,Intakes,March,2018,2018-03
+8,Quarantine,9,0,0,Intakes,March,2018,2018-03
+11,Adoption,101,41,0,Outcomes,March,2018,2018-03
+12,Strays Returned to Owner,100,3,0,Outcomes,March,2018,2018-03
+13,Other Returned to Owner,43,9,0,Outcomes,March,2018,2018-03
+14,Transfer,295,379,41,Outcomes,March,2018,2018-03
+15,Euthanasia by Request,50,7,0,Outcomes,March,2018,2018-03
+16,Other Euthanasia,38,19,37,Outcomes,March,2018,2018-03
+17,Died in Care,4,6,1,Outcomes,March,2018,2018-03
+18,Dead on Arrival,35,29,11,Outcomes,March,2018,2018-03
+19,Relocate,0,0,2,Outcomes,March,2018,2018-03
+1,Stray,288,169,9,Intakes,March,2020,2020-03
+2,Owner Surrender,122,90,13,Intakes,March,2020,2020-03
+3,Confiscate,19,10,3,Intakes,March,2020,2020-03
+4,Wildlife,0,0,105,Intakes,March,2020,2020-03
+5,Disposal Request,31,10,4,Intakes,March,2020,2020-03
+6,Euthanasia Request,49,11,2,Intakes,March,2020,2020-03
+7,Returns,3,1,0,Intakes,March,2020,2020-03
+8,Quarantine,5,0,0,Intakes,March,2020,2020-03
+11,Adoption,106,75,1,Outcomes,March,2020,2020-03
+12,Strays Returned to Owner,99,3,0,Outcomes,March,2020,2020-03
+13,Other Returned to Owner,17,4,1,Outcomes,March,2020,2020-03
+14,Transfer,353,269,56,Outcomes,March,2020,2020-03
+15,Euthanasia by Request,46,9,2,Outcomes,March,2020,2020-03
+16,Other Euthanasia,39,11,76,Outcomes,March,2020,2020-03
+17,Died in Care,3,3,3,Outcomes,March,2020,2020-03
+18,Dead on Arrival,35,15,14,Outcomes,March,2020,2020-03
+1,Stray,340,250,21,Intakes,March,2022,2022-03
+2,Owner Surrender,49,92,12,Intakes,March,2022,2022-03
+3,Confiscate,26,10,22,Intakes,March,2022,2022-03
+4,Wildlife,0,0,46,Intakes,March,2022,2022-03
+5,Disposal Request,20,6,4,Intakes,March,2022,2022-03
+6,Euthanasia Request,62,14,0,Intakes,March,2022,2022-03
+9,Adoption,68,47,7,Outcomes,March,2022,2022-03
+10,Strays Returned to Owner,75,4,0,Outcomes,March,2022,2022-03
+11,Other Returned to Owner,5,2,0,Outcomes,March,2022,2022-03
+12,Transfer,214,257,54,Outcomes,March,2022,2022-03
+13,Euthanasia by Request,54,12,0,Outcomes,March,2022,2022-03
+14,Other Euthanasia,57,20,22,Outcomes,March,2022,2022-03
+15,Died in Care,1,3,2,Outcomes,March,2022,2022-03
+16,Dead on Arrival,24,16,11,Outcomes,March,2022,2022-03
+17,Relocate,0,0,2,Outcomes,March,2022,2022-03
+1,Stray,374,227,8,Intakes,March,2019,2019-03
+2,Owner Surrender,189,198,4,Intakes,March,2019,2019-03
+3,Confiscate,14,1,0,Intakes,March,2019,2019-03
+4,Wildlife,0,0,49,Intakes,March,2019,2019-03
+5,Disposal Request,41,19,3,Intakes,March,2019,2019-03
+6,Euthanasia Request,66,10,0,Intakes,March,2019,2019-03
+7,Returns,7,2,0,Intakes,March,2019,2019-03
+8,Quarantine,6,1,0,Intakes,March,2019,2019-03
+11,Adoption,128,77,0,Outcomes,March,2019,2019-03
+12,Strays Returned to Owner,133,4,0,Outcomes,March,2019,2019-03
+13,Other Returned to Owner,21,3,0,Outcomes,March,2019,2019-03
+14,Transfer,294,347,23,Outcomes,March,2019,2019-03
+15,Euthanasia by Request,56,10,0,Outcomes,March,2019,2019-03
+16,Other Euthanasia,27,14,27,Outcomes,March,2019,2019-03
+17,Died in Care,0,4,3,Outcomes,March,2019,2019-03
+18,Dead on Arrival,45,19,9,Outcomes,March,2019,2019-03
+1,Stray,259,244,9,Intakes,March,2021,2021-03
+2,Owner Surrender,64,112,8,Intakes,March,2021,2021-03
+3,Confiscate,17,5,0,Intakes,March,2021,2021-03
+4,Wildlife,0,0,82,Intakes,March,2021,2021-03
+5,Disposal Request,26,15,3,Intakes,March,2021,2021-03
+6,Euthanasia Request,46,14,3,Intakes,March,2021,2021-03
+7,Returns,5,0,0,Intakes,March,2021,2021-03
+8,Quarantine,7,0,0,Intakes,March,2021,2021-03
+11,Adoption,40,14,0,Outcomes,March,2021,2021-03
+12,Strays Returned to Owner,83,1,0,Outcomes,March,2021,2021-03
+13,Other Returned to Owner,23,3,0,Outcomes,March,2021,2021-03
+14,Transfer,163,306,54,Outcomes,March,2021,2021-03
+15,Euthanasia by Request,35,10,2,Outcomes,March,2021,2021-03
+16,Other Euthanasia,14,14,32,Outcomes,March,2021,2021-03
+17,Died in Care,1,5,6,Outcomes,March,2021,2021-03
+18,Dead on Arrival,31,24,7,Outcomes,March,2021,2021-03
+19,Relocate,0,0,1,Outcomes,March,2021,2021-03
+20,Missing,0,0,1,Outcomes,March,2021,2021-03
+1,Stray,341,395,12,Intakes,May,2015,2015-05
+2,Owner Surrender,185,194,7,Intakes,May,2015,2015-05
+3,Confiscate,76,18,0,Intakes,May,2015,2015-05
+4,Wildlife,0,0,139,Intakes,May,2015,2015-05
+5,Disposal Request,56,16,1,Intakes,May,2015,2015-05
+6,Euthanasia Request,41,12,0,Intakes,May,2015,2015-05
+7,Returns,0,1,0,Intakes,May,2015,2015-05
+10,Adoption,4,36,0,Outcomes,May,2015,2015-05
+11,Returned to Owner,119,6,0,Outcomes,May,2015,2015-05
+12,Transfer,264,483,85,Outcomes,May,2015,2015-05
+13,Euthanasia by Request,39,12,0,Outcomes,May,2015,2015-05
+14,Other Euthanasia,252,49,50,Outcomes,May,2015,2015-05
+15,Died in Care,7,6,6,Outcomes,May,2015,2015-05
+16,Dead on Arrival,62,17,20,Outcomes,May,2015,2015-05
+1,Stray,284,390,32,Intakes,May,2016,2016-05
+2,Owner Surrender,191,163,8,Intakes,May,2016,2016-05
+3,Confiscate,73,6,0,Intakes,May,2016,2016-05
+4,Wildlife,0,0,189,Intakes,May,2016,2016-05
+5,Disposal Request,41,17,1,Intakes,May,2016,2016-05
+6,Euthanasia Request,50,4,3,Intakes,May,2016,2016-05
+7,Returns,7,0,0,Intakes,May,2016,2016-05
+10,Adoption,48,46,0,Outcomes,May,2016,2016-05
+11,Returned to Owner,97,9,1,Outcomes,May,2016,2016-05
+12,Transfer,241,408,127,Outcomes,May,2016,2016-05
+13,Euthanasia by Request,49,4,3,Outcomes,May,2016,2016-05
+14,Other Euthanasia,167,47,55,Outcomes,May,2016,2016-05
+15,Died in Care,1,10,12,Outcomes,May,2016,2016-05
+16,Dead on Arrival,52,22,32,Outcomes,May,2016,2016-05
+17,RELOCATE,0,0,1,Outcomes,May,2016,2016-05
+1,Stray,272,346,19,Intakes,May,2017,2017-05
+2,Owner Surrender,156,185,7,Intakes,May,2017,2017-05
+3,Confiscate,77,15,2,Intakes,May,2017,2017-05
+4,Wildlife,0,0,221,Intakes,May,2017,2017-05
+5,Disposal Request,54,38,11,Intakes,May,2017,2017-05
+6,Euthanasia Request,44,13,0,Intakes,May,2017,2017-05
+7,Returns,6,0,0,Intakes,May,2017,2017-05
+10,Adoption,42,31,0,Outcomes,May,2017,2017-05
+11,Returned to Owner,114,7,2,Outcomes,May,2017,2017-05
+12,Transfer,244,396,148,Outcomes,May,2017,2017-05
+13,Euthanasia by Request,43,14,0,Outcomes,May,2017,2017-05
+14,Other Euthanasia,54,49,59,Outcomes,May,2017,2017-05
+15,Died in Care,3,5,18,Outcomes,May,2017,2017-05
+16,Dead on Arrival,55,42,32,Outcomes,May,2017,2017-05
+1,Stray,319,317,5,Intakes,May,2018,2018-05
+2,Owner Surrender,184,160,28,Intakes,May,2018,2018-05
+3,Confiscate,37,24,2,Intakes,May,2018,2018-05
+4,Wildlife,0,0,249,Intakes,May,2018,2018-05
+5,Disposal Request,46,18,2,Intakes,May,2018,2018-05
+6,Euthanasia Request,33,6,1,Intakes,May,2018,2018-05
+7,Returns,8,0,0,Intakes,May,2018,2018-05
+8,Quarantine,18,0,0,Intakes,May,2018,2018-05
+11,Adoption,78,31,0,Outcomes,May,2018,2018-05
+12,Strays Returned to Owner,105,4,0,Outcomes,May,2018,2018-05
+13,Other Returned to Owner,41,10,1,Outcomes,May,2018,2018-05
+14,Transfer,290,420,169,Outcomes,May,2018,2018-05
+15,Euthanasia by Request,32,6,1,Outcomes,May,2018,2018-05
+16,Other Euthanasia,62,35,77,Outcomes,May,2018,2018-05
+17,Died in Care,2,5,10,Outcomes,May,2018,2018-05
+18,Dead on Arrival,50,21,24,Outcomes,May,2018,2018-05
+19,Relocate,0,0,1,Outcomes,May,2018,2018-05
+1,Stray,369,340,6,Intakes,May,2019,2019-05
+2,Owner Surrender,174,222,2,Intakes,May,2019,2019-05
+3,Confiscate,43,19,2,Intakes,May,2019,2019-05
+4,Wildlife,0,0,138,Intakes,May,2019,2019-05
+5,Disposal Request,32,17,6,Intakes,May,2019,2019-05
+6,Euthanasia Request,53,9,0,Intakes,May,2019,2019-05
+7,Returns,7,1,0,Intakes,May,2019,2019-05
+8,Quarantine,20,0,0,Intakes,May,2019,2019-05
+11,Adoption,129,75,0,Outcomes,May,2019,2019-05
+12,Strays Returned to Owner,100,8,0,Outcomes,May,2019,2019-05
+13,Other Returned to Owner,42,5,0,Outcomes,May,2019,2019-05
+14,Transfer,238,399,71,Outcomes,May,2019,2019-05
+15,Euthanasia by Request,51,8,0,Outcomes,May,2019,2019-05
+16,Other Euthanasia,47,22,56,Outcomes,May,2019,2019-05
+17,Died in Care,2,5,14,Outcomes,May,2019,2019-05
+18,Dead on Arrival,34,22,15,Outcomes,May,2019,2019-05
+19,FOSTER,2,0,0,Outcomes,May,2019,2019-05
+1,Stray,165,195,4,Intakes,May,2020,2020-05
+2,Owner Surrender,45,84,13,Intakes,May,2020,2020-05
+3,Confiscate,8,0,0,Intakes,May,2020,2020-05
+4,Wildlife,0,0,168,Intakes,May,2020,2020-05
+5,Disposal Request,17,19,7,Intakes,May,2020,2020-05
+6,Euthanasia Request,53,10,0,Intakes,May,2020,2020-05
+7,Quarantine,3,0,0,Intakes,May,2020,2020-05
+10,Adoption,0,2,0,Outcomes,May,2020,2020-05
+11,Strays Returned to Owner,54,0,1,Outcomes,May,2020,2020-05
+12,Other Returned to Owner,5,1,0,Outcomes,May,2020,2020-05
+13,Transfer,160,244,96,Outcomes,May,2020,2020-05
+14,Euthanasia by Request,43,10,0,Outcomes,May,2020,2020-05
+15,Other Euthanasia,11,16,68,Outcomes,May,2020,2020-05
+16,Died in Care,1,0,5,Outcomes,May,2020,2020-05
+17,Dead on Arrival,18,22,25,Outcomes,May,2020,2020-05
+18,Relocate,0,0,1,Outcomes,May,2020,2020-05
+1,Stray,260,387,17,Intakes,May,2021,2021-05
+2,Owner Surrender,42,127,7,Intakes,May,2021,2021-05
+3,Confiscate,10,4,1,Intakes,May,2021,2021-05
+4,Wildlife,0,0,183,Intakes,May,2021,2021-05
+5,Disposal Request,24,9,2,Intakes,May,2021,2021-05
+6,Euthanasia Request,58,18,1,Intakes,May,2021,2021-05
+7,Returns,1,0,0,Intakes,May,2021,2021-05
+8,Quarantine,4,0,0,Intakes,May,2021,2021-05
+11,Adoption,40,35,0,Outcomes,May,2021,2021-05
+12,Strays Returned to Owner,81,7,0,Outcomes,May,2021,2021-05
+13,Other Returned to Owner,6,4,0,Outcomes,May,2021,2021-05
+14,Transfer,146,415,135,Outcomes,May,2021,2021-05
+15,Euthanasia by Request,54,14,0,Outcomes,May,2021,2021-05
+16,Other Euthanasia,21,24,40,Outcomes,May,2021,2021-05
+17,Died in Care,0,8,14,Outcomes,May,2021,2021-05
+18,Dead on Arrival,26,18,8,Outcomes,May,2021,2021-05
+19,Relocate,0,0,1,Outcomes,May,2021,2021-05
+1,Stray,357,243,18,Intakes,November,2015,2015-11
+2,Owner Surrender,219,166,28,Intakes,November,2015,2015-11
+3,Confiscate,61,20,1,Intakes,November,2015,2015-11
+4,Wildlife,0,0,56,Intakes,November,2015,2015-11
+5,Disposal Request,41,15,1,Intakes,November,2015,2015-11
+6,Euthanasia Request,40,8,0,Intakes,November,2015,2015-11
+7,Returns,8,2,0,Intakes,November,2015,2015-11
+10,Adoption,51,54,0,Outcomes,November,2015,2015-11
+11,Returned to Owner,97,19,0,Outcomes,November,2015,2015-11
+12,Transfer,281,240,61,Outcomes,November,2015,2015-11
+13,Euthanasia by Request,42,6,0,Outcomes,November,2015,2015-11
+14,Other Euthanasia,205,72,32,Outcomes,November,2015,2015-11
+15,Died in Care,8,7,1,Outcomes,November,2015,2015-11
+16,Dead on Arrival,50,20,15,Outcomes,November,2015,2015-11
+17,RELOCATE,0,1,1,Outcomes,November,2015,2015-11
+1,Stray,287,199,5,Intakes,November,2016,2016-11
+2,Owner Surrender,206,133,17,Intakes,November,2016,2016-11
+3,Confiscate,41,1,2,Intakes,November,2016,2016-11
+4,Wildlife,0,0,53,Intakes,November,2016,2016-11
+5,Disposal Request,49,17,4,Intakes,November,2016,2016-11
+6,Euthanasia Request,38,13,0,Intakes,November,2016,2016-11
+7,Returns,3,0,0,Intakes,November,2016,2016-11
+10,Adoption,56,63,0,Outcomes,November,2016,2016-11
+11,Returned to Owner,78,5,0,Outcomes,November,2016,2016-11
+12,Transfer,299,202,35,Outcomes,November,2016,2016-11
+13,Euthanasia by Request,38,13,0,Outcomes,November,2016,2016-11
+14,Other Euthanasia,115,56,32,Outcomes,November,2016,2016-11
+15,Died in Care,10,7,9,Outcomes,November,2016,2016-11
+16,Dead on Arrival,50,18,9,Outcomes,November,2016,2016-11
+1,Stray,262,286,25,Intakes,November,2017,2017-11
+2,Owner Surrender,151,148,21,Intakes,November,2017,2017-11
+3,Confiscate,36,5,5,Intakes,November,2017,2017-11
+4,Wildlife,0,0,69,Intakes,November,2017,2017-11
+5,Disposal Request,30,19,4,Intakes,November,2017,2017-11
+6,Euthanasia Request,69,11,0,Intakes,November,2017,2017-11
+7,Returns,6,5,0,Intakes,November,2017,2017-11
+10,Adoption,78,86,0,Outcomes,November,2017,2017-11
+11,Returned to Owner,105,17,0,Outcomes,November,2017,2017-11
+12,Transfer,249,200,50,Outcomes,November,2017,2017-11
+13,Euthanasia by Request,62,10,0,Outcomes,November,2017,2017-11
+14,Other Euthanasia,41,26,51,Outcomes,November,2017,2017-11
+15,Died in Care,0,2,3,Outcomes,November,2017,2017-11
+16,Dead on Arrival,29,22,18,Outcomes,November,2017,2017-11
+17,RELOCATE,0,0,1,Outcomes,November,2017,2017-11
+1,Stray,293,283,4,Intakes,November,2018,2018-11
+2,Owner Surrender,197,165,14,Intakes,November,2018,2018-11
+3,Confiscate,35,21,4,Intakes,November,2018,2018-11
+4,Wildlife,0,0,48,Intakes,November,2018,2018-11
+5,Disposal Request,49,17,5,Intakes,November,2018,2018-11
+6,Euthanasia Request,49,15,0,Intakes,November,2018,2018-11
+7,Returns,11,3,0,Intakes,November,2018,2018-11
+8,Quarantine,13,0,0,Intakes,November,2018,2018-11
+11,Adoption,79,82,0,Outcomes,November,2018,2018-11
+12,Strays Returned to Owner,104,6,0,Outcomes,November,2018,2018-11
+13,Other Returned to Owner,43,7,0,Outcomes,November,2018,2018-11
+14,Transfer,278,338,40,Outcomes,November,2018,2018-11
+15,Euthanasia by Request,46,15,0,Outcomes,November,2018,2018-11
+16,Other Euthanasia,58,25,21,Outcomes,November,2018,2018-11
+17,Died in Care,6,3,6,Outcomes,November,2018,2018-11
+18,Dead on Arrival,53,18,10,Outcomes,November,2018,2018-11
+1,Stray,372,306,13,Intakes,November,2019,2019-11
+2,Owner Surrender,169,161,6,Intakes,November,2019,2019-11
+3,Confiscate,50,25,4,Intakes,November,2019,2019-11
+4,Wildlife,0,0,98,Intakes,November,2019,2019-11
+5,Disposal Request,37,17,4,Intakes,November,2019,2019-11
+6,Euthanasia Request,73,14,0,Intakes,November,2019,2019-11
+7,Returns,4,7,0,Intakes,November,2019,2019-11
+8,Quarantine,12,0,0,Intakes,November,2019,2019-11
+11,Adoption,155,185,11,Outcomes,November,2019,2019-11
+12,Strays Returned to Owner,99,14,0,Outcomes,November,2019,2019-11
+13,Other Returned to Owner,34,4,0,Outcomes,November,2019,2019-11
+14,Transfer,278,246,33,Outcomes,November,2019,2019-11
+15,Euthanasia by Request,70,13,0,Outcomes,November,2019,2019-11
+16,Other Euthanasia,37,38,72,Outcomes,November,2019,2019-11
+17,Died in Care,3,7,4,Outcomes,November,2019,2019-11
+18,Dead on Arrival,36,21,10,Outcomes,November,2019,2019-11
+19,Relocate,0,0,1,Outcomes,November,2019,2019-11
+20,Missing,0,1,0,Outcomes,November,2019,2019-11
+1,Stray,221,162,12,Intakes,November,2020,2020-11
+2,Owner Surrender,53,55,2,Intakes,November,2020,2020-11
+3,Confiscate,21,8,0,Intakes,November,2020,2020-11
+4,Wildlife,0,0,69,Intakes,November,2020,2020-11
+5,Disposal Request,32,8,4,Intakes,November,2020,2020-11
+6,Euthanasia Request,45,8,2,Intakes,November,2020,2020-11
+7,Returns,1,0,0,Intakes,November,2020,2020-11
+8,Quarantine,1,0,0,Intakes,November,2020,2020-11
+11,Adoption,26,41,4,Outcomes,November,2020,2020-11
+12,Strays Returned to Owner,67,11,0,Outcomes,November,2020,2020-11
+13,Other Returned to Owner,6,0,0,Outcomes,November,2020,2020-11
+14,Transfer,166,181,24,Outcomes,November,2020,2020-11
+15,Euthanasia by Request,39,6,2,Outcomes,November,2020,2020-11
+16,Other Euthanasia,15,18,47,Outcomes,November,2020,2020-11
+17,Died in Care,0,5,4,Outcomes,November,2020,2020-11
+18,Dead on Arrival,38,14,15,Outcomes,November,2020,2020-11
+1,Stray,355,316,10,Intakes,November,2021,2021-11
+2,Owner Surrender,38,42,7,Intakes,November,2021,2021-11
+3,Confiscate,11,4,2,Intakes,November,2021,2021-11
+4,Wildlife,0,0,38,Intakes,November,2021,2021-11
+5,Disposal Request,22,11,9,Intakes,November,2021,2021-11
+6,Euthanasia Request,53,21,3,Intakes,November,2021,2021-11
+7,Returns,3,3,0,Intakes,November,2021,2021-11
+8,Quarantine,5,0,0,Intakes,November,2021,2021-11
+11,Adoption,41,67,3,Outcomes,November,2021,2021-11
+12,Strays Returned to Owner,84,8,0,Outcomes,November,2021,2021-11
+13,Other Returned to Owner,7,2,2,Outcomes,November,2021,2021-11
+14,Transfer,203,264,32,Outcomes,November,2021,2021-11
+15,Euthanasia by Request,44,12,3,Outcomes,November,2021,2021-11
+16,Other Euthanasia,59,22,17,Outcomes,November,2021,2021-11
+17,Died in Care,2,9,1,Outcomes,November,2021,2021-11
+18,Dead on Arrival,22,19,16,Outcomes,November,2021,2021-11
+19,Missing,0,1,0,Outcomes,November,2021,2021-11
+1,Stray,351,335,7,Intakes,October,2015,2015-10
+2,Owner Surrender,240,176,10,Intakes,October,2015,2015-10
+3,Confiscate,57,7,4,Intakes,October,2015,2015-10
+4,Wildlife,0,0,108,Intakes,October,2015,2015-10
+5,Disposal Request,52,19,3,Intakes,October,2015,2015-10
+6,Euthanasia Request,53,14,1,Intakes,October,2015,2015-10
+7,Returns,2,0,0,Intakes,October,2015,2015-10
+10,Adoption,41,60,0,Outcomes,October,2015,2015-10
+11,Returned to Owner,81,14,0,Outcomes,October,2015,2015-10
+12,Transfer,245,381,40,Outcomes,October,2015,2015-10
+13,Euthanasia by Request,47,14,1,Outcomes,October,2015,2015-10
+14,Other Euthanasia,251,81,57,Outcomes,October,2015,2015-10
+15,Died in Care,4,16,5,Outcomes,October,2015,2015-10
+16,Dead on Arrival,57,30,29,Outcomes,October,2015,2015-10
+1,Stray,349,322,4,Intakes,October,2016,2016-10
+2,Owner Surrender,299,141,57,Intakes,October,2016,2016-10
+3,Confiscate,36,9,1,Intakes,October,2016,2016-10
+4,Wildlife,0,0,108,Intakes,October,2016,2016-10
+5,Disposal Request,33,24,6,Intakes,October,2016,2016-10
+6,Euthanasia Request,57,13,0,Intakes,October,2016,2016-10
+7,Returns,3,1,0,Intakes,October,2016,2016-10
+10,Adoption,53,54,0,Outcomes,October,2016,2016-10
+11,Returned to Owner,102,11,0,Outcomes,October,2016,2016-10
+12,Transfer,335,275,78,Outcomes,October,2016,2016-10
+13,Euthanasia by Request,55,10,0,Outcomes,October,2016,2016-10
+14,Other Euthanasia,165,150,61,Outcomes,October,2016,2016-10
+15,Died in Care,5,18,6,Outcomes,October,2016,2016-10
+16,Dead on Arrival,35,28,23,Outcomes,October,2016,2016-10
+1,Stray,256,247,7,Intakes,October,2017,2017-10
+2,Owner Surrender,183,167,15,Intakes,October,2017,2017-10
+3,Confiscate,65,10,1,Intakes,October,2017,2017-10
+4,Wildlife,0,0,113,Intakes,October,2017,2017-10
+5,Disposal Request,41,24,8,Intakes,October,2017,2017-10
+6,Euthanasia Request,54,24,1,Intakes,October,2017,2017-10
+7,Returns,6,4,0,Intakes,October,2017,2017-10
+10,Adoption,71,182,0,Outcomes,October,2017,2017-10
+11,Returned to Owner,107,12,0,Outcomes,October,2017,2017-10
+12,Transfer,272,243,46,Outcomes,October,2017,2017-10
+13,Euthanasia by Request,43,22,1,Outcomes,October,2017,2017-10
+14,Other Euthanasia,38,46,72,Outcomes,October,2017,2017-10
+15,Died in Care,1,9,4,Outcomes,October,2017,2017-10
+16,Dead on Arrival,46,30,25,Outcomes,October,2017,2017-10
+17,MISSING,0,1,0,Outcomes,October,2017,2017-10
+1,Stray,311,371,10,Intakes,October,2018,2018-10
+2,Owner Surrender,182,195,8,Intakes,October,2018,2018-10
+3,Confiscate,39,13,2,Intakes,October,2018,2018-10
+4,Wildlife,0,0,105,Intakes,October,2018,2018-10
+5,Disposal Request,40,19,7,Intakes,October,2018,2018-10
+6,Euthanasia Request,70,9,0,Intakes,October,2018,2018-10
+7,Returns,5,4,0,Intakes,October,2018,2018-10
+8,Quarantine,15,1,0,Intakes,October,2018,2018-10
+11,Adoption,78,110,0,Outcomes,October,2018,2018-10
+12,Strays Returned to Owner,78,8,0,Outcomes,October,2018,2018-10
+13,Other Returned to Owner,39,5,1,Outcomes,October,2018,2018-10
+14,Transfer,300,462,39,Outcomes,October,2018,2018-10
+15,Euthanasia by Request,62,9,0,Outcomes,October,2018,2018-10
+16,Other Euthanasia,46,36,60,Outcomes,October,2018,2018-10
+17,Died in Care,2,16,3,Outcomes,October,2018,2018-10
+18,Dead on Arrival,41,23,25,Outcomes,October,2018,2018-10
+19,Missing,0,1,0,Outcomes,October,2018,2018-10
+1,Stray,353,470,14,Intakes,October,2019,2019-10
+2,Owner Surrender,243,211,23,Intakes,October,2019,2019-10
+3,Confiscate,51,11,2,Intakes,October,2019,2019-10
+4,Wildlife,0,0,121,Intakes,October,2019,2019-10
+5,Disposal Request,29,24,8,Intakes,October,2019,2019-10
+6,Euthanasia Request,79,17,0,Intakes,October,2019,2019-10
+7,Returns,5,10,0,Intakes,October,2019,2019-10
+8,Quarantine,12,0,0,Intakes,October,2019,2019-10
+11,Adoption,159,249,1,Outcomes,October,2019,2019-10
+12,Strays Returned to Owner,85,7,0,Outcomes,October,2019,2019-10
+13,Other Returned to Owner,37,6,1,Outcomes,October,2019,2019-10
+14,Transfer,313,408,81,Outcomes,October,2019,2019-10
+15,Euthanasia by Request,73,16,0,Outcomes,October,2019,2019-10
+16,Other Euthanasia,71,52,68,Outcomes,October,2019,2019-10
+17,Died in Care,5,11,4,Outcomes,October,2019,2019-10
+18,Dead on Arrival,41,37,19,Outcomes,October,2019,2019-10
+1,Stray,216,269,13,Intakes,October,2020,2020-10
+2,Owner Surrender,77,99,17,Intakes,October,2020,2020-10
+3,Confiscate,9,4,0,Intakes,October,2020,2020-10
+4,Wildlife,0,0,96,Intakes,October,2020,2020-10
+5,Disposal Request,33,16,5,Intakes,October,2020,2020-10
+6,Euthanasia Request,55,6,0,Intakes,October,2020,2020-10
+7,Returns,1,2,0,Intakes,October,2020,2020-10
+8,Quarantine,4,0,0,Intakes,October,2020,2020-10
+11,Adoption,33,34,2,Outcomes,October,2020,2020-10
+12,Strays Returned to Owner,64,5,0,Outcomes,October,2020,2020-10
+13,Other Returned to Owner,7,1,0,Outcomes,October,2020,2020-10
+14,Transfer,193,276,52,Outcomes,October,2020,2020-10
+15,Euthanasia by Request,45,3,0,Outcomes,October,2020,2020-10
+16,Other Euthanasia,17,25,51,Outcomes,October,2020,2020-10
+17,Died in Care,3,5,12,Outcomes,October,2020,2020-10
+18,Dead on Arrival,30,25,10,Outcomes,October,2020,2020-10
+1,Stray,331,401,16,Intakes,October,2021,2021-10
+2,Owner Surrender,39,57,7,Intakes,October,2021,2021-10
+3,Confiscate,23,12,1,Intakes,October,2021,2021-10
+4,Wildlife,0,0,91,Intakes,October,2021,2021-10
+5,Disposal Request,22,15,6,Intakes,October,2021,2021-10
+6,Euthanasia Request,70,13,5,Intakes,October,2021,2021-10
+7,Returns,1,0,0,Intakes,October,2021,2021-10
+8,Quarantine,1,0,0,Intakes,October,2021,2021-10
+11,Adoption,48,47,0,Outcomes,October,2021,2021-10
+12,Strays Returned to Owner,90,8,0,Outcomes,October,2021,2021-10
+13,Other Returned to Owner,14,0,0,Outcomes,October,2021,2021-10
+14,Transfer,212,350,33,Outcomes,October,2021,2021-10
+15,Euthanasia by Request,61,11,5,Outcomes,October,2021,2021-10
+16,Other Euthanasia,36,44,57,Outcomes,October,2021,2021-10
+17,Died in Care,3,9,6,Outcomes,October,2021,2021-10
+18,Dead on Arrival,21,26,15,Outcomes,October,2021,2021-10
+1,Stray,319,468,11,Intakes,September,2015,2015-09
+2,Owner Surrender,233,266,6,Intakes,September,2015,2015-09
+3,Confiscate,84,11,0,Intakes,September,2015,2015-09
+4,Wildlife,0,0,156,Intakes,September,2015,2015-09
+5,Disposal Request,51,19,2,Intakes,September,2015,2015-09
+6,Euthanasia Request,39,15,1,Intakes,September,2015,2015-09
+7,Returns,2,4,0,Intakes,September,2015,2015-09
+10,Adoption,41,47,0,Outcomes,September,2015,2015-09
+11,Returned to Owner,93,7,3,Outcomes,September,2015,2015-09
+12,Transfer,243,442,36,Outcomes,September,2015,2015-09
+13,Euthanasia by Request,37,14,1,Outcomes,September,2015,2015-09
+14,Other Euthanasia,245,192,96,Outcomes,September,2015,2015-09
+15,Died in Care,6,11,2,Outcomes,September,2015,2015-09
+16,Dead on Arrival,55,29,34,Outcomes,September,2015,2015-09
+1,Stray,280,413,7,Intakes,September,2016,2016-09
+2,Owner Surrender,253,179,15,Intakes,September,2016,2016-09
+3,Confiscate,44,25,1,Intakes,September,2016,2016-09
+4,Wildlife,0,0,155,Intakes,September,2016,2016-09
+5,Disposal Request,35,24,3,Intakes,September,2016,2016-09
+6,Euthanasia Request,51,7,0,Intakes,September,2016,2016-09
+7,Returns,2,1,0,Intakes,September,2016,2016-09
+10,Adoption,29,39,0,Outcomes,September,2016,2016-09
+11,Returned to Owner,101,9,0,Outcomes,September,2016,2016-09
+12,Transfer,293,427,72,Outcomes,September,2016,2016-09
+13,Euthanasia by Request,49,7,0,Outcomes,September,2016,2016-09
+14,Other Euthanasia,158,78,78,Outcomes,September,2016,2016-09
+15,Died in Care,3,18,11,Outcomes,September,2016,2016-09
+16,Dead on Arrival,46,24,24,Outcomes,September,2016,2016-09
+1,Stray,250,320,9,Intakes,September,2017,2017-09
+2,Owner Surrender,154,171,11,Intakes,September,2017,2017-09
+3,Confiscate,41,8,1,Intakes,September,2017,2017-09
+4,Wildlife,0,0,160,Intakes,September,2017,2017-09
+5,Disposal Request,49,35,8,Intakes,September,2017,2017-09
+6,Euthanasia Request,65,12,2,Intakes,September,2017,2017-09
+7,Returns,6,0,0,Intakes,September,2017,2017-09
+10,Adoption,73,81,0,Outcomes,September,2017,2017-09
+11,Returned to Owner,96,9,1,Outcomes,September,2017,2017-09
+12,Transfer,244,299,79,Outcomes,September,2017,2017-09
+13,Euthanasia by Request,59,11,2,Outcomes,September,2017,2017-09
+14,Other Euthanasia,34,69,76,Outcomes,September,2017,2017-09
+15,Died in Care,3,17,5,Outcomes,September,2017,2017-09
+16,Dead on Arrival,48,37,30,Outcomes,September,2017,2017-09
+17,0,1,0,1,Outcomes,September,2017,2017-09
+18,557,524,193,1274,Outcomes,September,2017,2017-09
+1,Stray,291,472,3,Intakes,September,2018,2018-09
+2,Owner Surrender,184,191,11,Intakes,September,2018,2018-09
+3,Confiscate,33,8,0,Intakes,September,2018,2018-09
+4,Wildlife,0,0,149,Intakes,September,2018,2018-09
+5,Disposal Request,47,19,2,Intakes,September,2018,2018-09
+6,Euthanasia Request,90,22,0,Intakes,September,2018,2018-09
+7,Returns,3,1,0,Intakes,September,2018,2018-09
+8,Quarantine,10,0,0,Intakes,September,2018,2018-09
+11,Adoption,75,78,0,Outcomes,September,2018,2018-09
+12,Strays Returned to Owner,81,10,0,Outcomes,September,2018,2018-09
+13,Other Returned to Owner,26,8,0,Outcomes,September,2018,2018-09
+14,Transfer,332,446,56,Outcomes,September,2018,2018-09
+15,Euthanasia by Request,84,17,0,Outcomes,September,2018,2018-09
+16,Other Euthanasia,63,65,85,Outcomes,September,2018,2018-09
+17,Died in Care,1,28,7,Outcomes,September,2018,2018-09
+18,Dead on Arrival,47,26,24,Outcomes,September,2018,2018-09
+1,Stray,367,506,10,Intakes,September,2019,2019-09
+2,Owner Surrender,218,216,23,Intakes,September,2019,2019-09
+3,Confiscate,29,20,2,Intakes,September,2019,2019-09
+4,Wildlife,0,0,136,Intakes,September,2019,2019-09
+5,Disposal Request,44,19,2,Intakes,September,2019,2019-09
+6,Euthanasia Request,72,15,0,Intakes,September,2019,2019-09
+7,Returns,9,2,0,Intakes,September,2019,2019-09
+8,Quarantine,8,0,0,Intakes,September,2019,2019-09
+11,Adoption,129,187,0,Outcomes,September,2019,2019-09
+12,Strays Returned to Owner,85,11,0,Outcomes,September,2019,2019-09
+13,Other Returned to Owner,22,8,0,Outcomes,September,2019,2019-09
+14,Transfer,331,484,66,Outcomes,September,2019,2019-09
+15,Euthanasia by Request,69,14,0,Outcomes,September,2019,2019-09
+16,Other Euthanasia,37,78,72,Outcomes,September,2019,2019-09
+17,Died in Care,4,16,9,Outcomes,September,2019,2019-09
+18,Dead on Arrival,45,24,23,Outcomes,September,2019,2019-09
+1,Stray,217,370,8,Intakes,September,2020,2020-09
+2,Owner Surrender,34,92,5,Intakes,September,2020,2020-09
+3,Confiscate,30,7,1,Intakes,September,2020,2020-09
+4,Wildlife,0,0,158,Intakes,September,2020,2020-09
+5,Disposal Request,37,13,5,Intakes,September,2020,2020-09
+6,Euthanasia Request,54,10,3,Intakes,September,2020,2020-09
+7,Returns,6,0,0,Intakes,September,2020,2020-09
+8,Quarantine,2,0,0,Intakes,September,2020,2020-09
+11,Adoption,26,50,0,Outcomes,September,2020,2020-09
+12,Strays Returned to Owner,59,2,0,Outcomes,September,2020,2020-09
+13,Other Returned to Owner,11,5,0,Outcomes,September,2020,2020-09
+14,Transfer,174,380,75,Outcomes,September,2020,2020-09
+15,Euthanasia by Request,42,10,3,Outcomes,September,2020,2020-09
+16,Other Euthanasia,14,46,67,Outcomes,September,2020,2020-09
+17,Died in Care,3,7,14,Outcomes,September,2020,2020-09
+18,Dead on Arrival,40,18,17,Outcomes,September,2020,2020-09
+19,Relocate,0,0,3,Outcomes,September,2020,2020-09
+1,Stray,289,410,13,Intakes,September,2021,2021-09
+2,Owner Surrender,32,44,5,Intakes,September,2021,2021-09
+3,Confiscate,22,11,0,Intakes,September,2021,2021-09
+4,Wildlife,0,0,141,Intakes,September,2021,2021-09
+5,Disposal Request,33,14,4,Intakes,September,2021,2021-09
+6,Euthanasia Request,81,12,0,Intakes,September,2021,2021-09
+7,Returns,2,4,0,Intakes,September,2021,2021-09
+10,Adoption,61,39,7,Outcomes,September,2021,2021-09
+11,Strays Returned to Owner,76,10,0,Outcomes,September,2021,2021-09
+12,Other Returned to Owner,12,4,0,Outcomes,September,2021,2021-09
+13,Transfer,195,321,65,Outcomes,September,2021,2021-09
+14,Euthanasia by Request,65,11,0,Outcomes,September,2021,2021-09
+15,Other Euthanasia,33,36,69,Outcomes,September,2021,2021-09
+16,Died in Care,3,7,7,Outcomes,September,2021,2021-09
+17,Dead on Arrival,38,14,16,Outcomes,September,2021,2021-09
