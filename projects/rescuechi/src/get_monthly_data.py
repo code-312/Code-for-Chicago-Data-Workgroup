@@ -83,12 +83,19 @@ for filename in os.listdir(DIR):
         month_df = pdf_to_df(file, month, year)
         full_df = pd.concat([full_df,month_df])
 
+# switch columns to lower case
+full_df.columns = [x.lower() for x in full_df.columns]
+
+# switch categories and type to lower case
+full_df['category'] = full_df['category'].str.lower()
+full_df['type'] = full_df['type'].str.lower()
+        
 # clean up data types
-full_df['Dog'] = full_df['Dog'].astype(int)
-full_df['Cat'] = full_df['Cat'].astype(int)
-full_df['Other'] = full_df['Other'].str.replace(',','').astype(int)
-full_df['Year'] = full_df['Year'].astype(int)
-full_df['Month'] = full_df['Month'].str.capitalize()
+full_df['dog'] = full_df['dog'].astype(int)
+full_df['cat'] = full_df['cat'].astype(int)
+full_df['other'] = full_df['other'].str.replace(',','').astype(int)
+full_df['year'] = full_df['year'].astype(int)
+full_df['month'] = full_df['month'].str.capitalize()
 
 # save dataframe
-full_df.to_csv('../data/cacc_monthly_data.csv')
+full_df.to_csv('../data/cacc_monthly_data.csv', index=False)
