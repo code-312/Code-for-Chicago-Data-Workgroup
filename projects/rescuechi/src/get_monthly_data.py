@@ -91,10 +91,14 @@ full_df['category'] = full_df['category'].str.lower()
 full_df['type'] = full_df['type'].str.lower()
         
 # clean up data types
-full_df['dog'] = full_df['dog'].astype(int)
-full_df['cat'] = full_df['cat'].astype(int)
-full_df['other'] = full_df['other'].str.replace(',','').astype(int)
-full_df['year'] = full_df['year'].astype(int)
+dtype_dict = {
+    'dog': int,
+    'cat': int,
+    'other': int,
+    'year': int
+}
+full_df['other'] = full_df['other'].str.replace(',','')
+full_df = full_df.astype(dtype_dict)
 full_df['month'] = full_df['month'].str.capitalize()
 
 # save dataframe
