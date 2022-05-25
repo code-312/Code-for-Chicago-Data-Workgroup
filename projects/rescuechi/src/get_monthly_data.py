@@ -72,7 +72,6 @@ full_df = pd.DataFrame()
 # iterate over PDF files
 for filename in os.listdir(DIR):
     if filename[-3:] == 'pdf':
-        filename=filename
         txt = filename[:-4].replace('_stats','').replace('-stats','').split('_')
         month=txt[0]
         year=txt[1]
