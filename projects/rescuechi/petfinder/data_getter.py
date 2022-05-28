@@ -6,12 +6,14 @@ import pickle
 
 DATA_DIR = Path(__file__).parent / "data"
 
+
 def check_for_secrets():
     """
     Checks that you have the required credentials in your environment
     """
     assert os.getenv("PETFINDER_KEY") is not None
     assert os.getenv("PETFINDER_SECRET") is not None
+
 
 def get_token() -> str:
     """
@@ -27,14 +29,14 @@ def get_token() -> str:
     """
     # make sure you have required variables in your environment
     check_for_secrets()
-    
+
     url = "https://api.petfinder.com/v2/oauth2/token"
 
     CLIENT_ID = os.getenv("PETFINDER_KEY")
     CLIENT_SECRET = os.getenv("PETFINDER_SECRET")
 
     headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        "Content-Type": "application/x-www-form-urlencoded",
     }
 
     data = f"grant_type=client_credentials&client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}"
@@ -63,16 +65,14 @@ def get_organizations() -> pd.DataFrame:
 
     url = "https://api.petfinder.com/v2/organizations"
 
-    headers = {
-        "Authorization": f"Bearer {token}"
-    }
+    headers = {"Authorization": f"Bearer {token}"}
 
     params = {
         "location": "Chicago, IL",
         "sort": "distance",
         "distance": 100,
         "limit": 100,
-        "page": 1
+        "page": 1,
     }
 
     # make the first call, and check how many total pages there are
@@ -97,9 +97,9 @@ def get_organizations() -> pd.DataFrame:
 
     # start a list of orgs that we'll append to
     all_orgs = response.json()["organizations"]
-    
+
     # iterate over all pages, starting with the 2nd page
-    for page in range(2,num_pages+1):
+    for page in range(2, num_pages + 1):
         # update params for current page
         params["page"] = page
 
@@ -125,7 +125,10 @@ def get_organizations() -> pd.DataFrame:
 
     return df_orgs
 
-def get_animals(organization=None, type="dog", status="adopted", max_pages=None) -> pd.DataFrame:
+
+def get_animals(
+    type="dog", status="adopted", organization=None, max_pages=None
+) -> pd.DataFrame:
     """
     Parameters
     ----------
@@ -150,12 +153,11 @@ def get_animals(organization=None, type="dog", status="adopted", max_pages=None)
 
     # this is where we'll save our results
     DATA_DIR.mkdir(parents=True, exist_ok=True)
+    (DATA_DIR / "backup").mkdir(parents=True, exist_ok=True)
 
     url = "https://api.petfinder.com/v2/animals"
 
-    headers = {
-        "Authorization": f"Bearer {token}"
-    }
+    headers = {"Authorization": f"Bearer {token}"}
 
     params = {
         "type": type,
@@ -165,7 +167,7 @@ def get_animals(organization=None, type="dog", status="adopted", max_pages=None)
         "sort": "distance",
         "distance": 100,
         "limit": 100,
-        "page": 1
+        "page": 1,
     }
 
     # make the first call, and check how many total pages there are
@@ -183,25 +185,30 @@ def get_animals(organization=None, type="dog", status="adopted", max_pages=None)
     # this is how many pages we need to iterate over
     num_pages = pagination["total_pages"]
 
-    # this is how many total orgs we expect to catch
+    # this is how many total animals we expect to catch
     total_count = pagination["total_count"]
 
     print(f"Found {total_count} animals.")
 
-    # start a list of orgs that we'll append to
+    # start a list of animals that we'll append to
     all_animals = response.json()["animals"]
-    
-    # iterate over all pages, starting with the 2nd page
+
+    # iterate over all remaining pages, starting with the 2nd page
     # if we set a value for max number of pages, only pull that many
     if max_pages is not None:
         num_pages = max_pages
 
-    for page in range(2,num_pages+1):
+    for page in range(2, num_pages + 1):
         # update params for current page
         params["page"] = page
 
         # make the call
         response = requests.get(url, headers=headers, params=params)
+
+        # if it was not successful, finish and save results collected so far
+        if response.status_code != 200:
+            print(f"Completed pages 1 - {page-1} out of the requested {num_pages}")
+            break
 
         # save temp results to file, so that we have them if something goes awry
         with open(DATA_DIR / "backup" / f"animals_page_{page}.pkl", "wb") as f:
@@ -210,20 +217,11 @@ def get_animals(organization=None, type="dog", status="adopted", max_pages=None)
         # append orgs to master list
         all_animals += response.json()["animals"]
 
-    # check that we acutally got all animals
-
-    # if we didn't specify max pages, expect to have found all animals
-    if max_pages is None:
-        assert len(all_animals) == total_count
-
-    # otherwise, multiply number of pages by animals per page
-    else:
-        assert len(all_animals) == max_pages * 100
-
     # convert to pandas
     df_animals = pd.DataFrame(all_animals)
 
-    # save to pickle file
+    # save to pickle and csv file
     df_animals.to_pickle(DATA_DIR / "chicago_animals.pkl")
+    df_animals.to_csv(DATA_DIR / "chicago_animals.csv", index=False)
 
     return df_animals
