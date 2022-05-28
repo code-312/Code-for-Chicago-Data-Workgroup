@@ -122,6 +122,7 @@ def get_organizations() -> pd.DataFrame:
     # save to pickle file
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     df_orgs.to_pickle(DATA_DIR / "chicago_orgs.pkl")
+    df_orgs.to_csv(DATA_DIR / "chicago_orgs.csv", index=False)
 
     return df_orgs
 
