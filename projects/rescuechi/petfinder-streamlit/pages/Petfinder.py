@@ -9,7 +9,7 @@ st.markdown("# Petfinder️")
 st.sidebar.markdown("# Petfinder️")
 
 # Opening JSON file
-f = open('example-petfinder-dog-response.json')
+f = open('projects/rescuechi/petfinder-streamlit/example-petfinder-dog-response.json')
 
 # returns JSON object as a dictionary
 json_data = json.load(f)
@@ -37,7 +37,6 @@ st.markdown("### List of Breeds With Counts")
 st.markdown(breed_count)
 st.markdown("### Chart of Breeds and Counts")
 breed_chart = pd.DataFrame(breed_count)
-st.markdown("#### Chart Data Table")
 breed_chart
 st.bar_chart(breed_chart)
 
