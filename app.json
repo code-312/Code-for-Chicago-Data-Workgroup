@@ -4,5 +4,9 @@
   "image": "heroku/python",
   "repository": "http://github.com/ecooperman/rescuepets.git",
   "keywords": ["python", "streamlit" ],
-  "addons": [ "heroku-postgresql" ]
+  "addons": [ "heroku-postgresql" ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
 }
