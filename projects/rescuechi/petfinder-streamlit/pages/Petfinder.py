@@ -4,9 +4,47 @@ import numpy as np
 import time
 import math
 import json
+import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
 st.markdown("# Petfinder️")
 st.sidebar.markdown("# Petfinder️")
+
+data_to_show = st.sidebar.selectbox(
+    'Data to view',
+    ('age', 'gender')
+)
+
+DATABASE_URL = os.environ['DATABASE_URL']
+
+#@st.experimental_singleton
+def init_connection():
+    return psycopg2.connect(DATABASE_URL, sslmode='require', cursor_factory=RealDictCursor)
+
+#@st.experimental_memo(ttl=600)
+def run_query(query):
+    with conn.cursor() as cur:
+        cur.execute(query)
+        return cur.fetchall()
+
+if "DATABASE-TABLE" in os.environ:
+    DATABASE_TABLE = os.environ['DATABASE_TABLE']
+else:
+    DATABASE_TABLE = "petfinder_clean"
+conn = init_connection()
+
+query = """
+    SELECT %s FROM "%s" GROUP BY %s;
+    """ % (data_to_show, DATABASE_TABLE, data_to_show)
+st.markdown("#### Query")
+st.markdown(query)
+results = pd.DataFrame(run_query(query))
+results
+#for row in rows:
+    #st.write(f"{row['age']} has a :{row['species']}:")
+
+st.bar_chart(results)
 
 # Opening JSON file
 f = open('projects/rescuechi/petfinder-streamlit/example-petfinder-dog-response.json')
