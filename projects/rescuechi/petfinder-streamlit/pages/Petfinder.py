@@ -8,12 +8,16 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
-st.markdown("# Petfinder️")
-st.sidebar.markdown("# Petfinder️")
+st.markdown("# Dynamic Petfinder Database Data")
 
-data_to_show = st.sidebar.selectbox(
-    'Data to view',
-    ('age', 'gender')
+number_of_breeds_slider = st.sidebar.slider(
+    'How many breeds would you like to see?',
+    1, 100, (20)
+)
+
+los_sort_selectbox = st.sidebar.selectbox(
+    'Sort By Length of Stay',
+    ('DESC', 'ASC', 'NONE')
 )
 
 DATABASE_URL = os.environ['DATABASE_URL']
@@ -34,17 +38,31 @@ else:
     DATABASE_TABLE = "petfinder_clean"
 conn = init_connection()
 
-query = """
-    SELECT %s FROM "%s" GROUP BY %s;
-    """ % (data_to_show, DATABASE_TABLE, data_to_show)
-st.markdown("#### Query")
-st.markdown(query)
-results = pd.DataFrame(run_query(query))
-results
-#for row in rows:
-    #st.write(f"{row['age']} has a :{row['species']}:")
+los_sort = "ORDER BY AVG(los) %s" % los_sort_selectbox if los_sort_selectbox != 'NONE' else ''
 
-st.bar_chart(results)
+los_by_breed_query = """
+    SELECT breed_primary,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" GROUP BY breed_primary %s LIMIT %s;
+    """ % (DATABASE_TABLE, los_sort, number_of_breeds_slider)
+st.markdown("#### Query")
+st.markdown(los_by_breed_query)
+results = run_query(los_by_breed_query)
+
+#results = pd.DataFrame(results)
+
+dogs_dict = {}
+count = 0
+
+# Convert SQL results into a dict
+for row in results:
+    dogs_dict[count] = row
+    count = count+1
+
+df = pd.DataFrame().from_dict(dogs_dict, orient="index")
+df.set_index("breed_primary", inplace=True)
+#df
+st.bar_chart(df)
+
+st.markdown("# Static Petfinder JSON Data")
 
 # Opening JSON file
 f = open('projects/rescuechi/petfinder-streamlit/example-petfinder-dog-response.json')
