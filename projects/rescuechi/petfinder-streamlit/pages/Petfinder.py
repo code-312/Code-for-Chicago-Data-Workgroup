@@ -23,9 +23,12 @@ los_sort_selectbox = st.sidebar.selectbox(
 DATABASE_URL = os.environ['DATABASE_URL']
 
 #@st.experimental_singleton
-def init_connection():
-    return psycopg2.connect(DATABASE_URL, sslmode='require', cursor_factory=RealDictCursor)
-
+def init_connection(returnDict):
+    if returnDict:
+        return psycopg2.connect(DATABASE_URL, sslmode='require', cursor_factory=RealDictCursor)
+    else:
+        return psycopg2.connect(DATABASE_URL, sslmode='require'
+                                )
 #@st.experimental_memo(ttl=600)
 def run_query(query):
     with conn.cursor() as cur:
@@ -36,65 +39,57 @@ if "DATABASE-TABLE" in os.environ:
     DATABASE_TABLE = os.environ['DATABASE_TABLE']
 else:
     DATABASE_TABLE = "petfinder_clean"
-conn = init_connection()
+conn = init_connection(False)
+
+# First get the list of breeds to be used for user interactions
+list_breeds_query = """
+    SELECT DISTINCT(breed_primary) FROM "%s" ORDER BY breed_primary ASC;
+    """ % (DATABASE_TABLE)
+st.markdown(list_breeds_query)
+breeds_results = run_query(list_breeds_query)
+
+breeds_array = []
+breeds_array_default = []
+for breed in breeds_results:
+    breeds_array.append(breed[0])
+total_num_breeds = len(breeds_array)
+#i = 0
+#while i < len(breeds_results):
+#    breeds_array.append(breeds_results[i][0])
+#    i+=1
+
+#    if i > number_of_breeds_slider:
+#        break
+
+breeds_list = st.sidebar.multiselect(
+    'Choose the breeds you want to see',
+    breeds_array, []
+)
+
+conn = init_connection(True)
+
+# Set up where clause for only the breeds the user has selected, if they selected any
+num_iterations = 0
+where_clause = ''
+if len(breeds_list) > 0 and len(breeds_list) < len(breeds_array):
+    where_clause = " WHERE breed_primary IN ("
+    for breed in breeds_list:
+        if num_iterations > 0:
+            where_clause += ","
+        where_clause += "'%s'" % breed
+        num_iterations += 1
+    where_clause += ") "
+
 
 los_sort = "ORDER BY AVG(los) %s" % los_sort_selectbox if los_sort_selectbox != 'NONE' else ''
-
 los_by_breed_query = """
-    SELECT breed_primary,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" GROUP BY breed_primary %s LIMIT %s;
-    """ % (DATABASE_TABLE, los_sort, number_of_breeds_slider)
+    SELECT breed_primary,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" %s GROUP BY breed_primary %s LIMIT %s;
+    """ % (DATABASE_TABLE, where_clause, los_sort, number_of_breeds_slider)
+
 st.markdown("#### Query")
 st.markdown(los_by_breed_query)
-results = run_query(los_by_breed_query)
+breeds_los_results = run_query(los_by_breed_query)
 
-#results = pd.DataFrame(results)
-
-dogs_dict = {}
-count = 0
-
-# Convert SQL results into a dict
-for row in results:
-    dogs_dict[count] = row
-    count = count+1
-
-df = pd.DataFrame().from_dict(dogs_dict, orient="index")
+df = pd.DataFrame().from_dict(breeds_los_results)
 df.set_index("breed_primary", inplace=True)
-#df
 st.bar_chart(df)
-
-st.markdown("# Static Petfinder JSON Data")
-
-# Opening JSON file
-f = open('projects/rescuechi/petfinder-streamlit/example-petfinder-dog-response.json')
-
-# returns JSON object as a dictionary
-json_data = json.load(f)
-
-st.markdown("*NOTE: Raw JSON data can be found at the bottom of the page*")
-
-all_breeds = [] # there's probably a better way to do this, but keep track of which breeds we've already seen, and increment them in that case
-breed_count = {'Breed Count': {}}
-
-# Iterating through the petfinder json
-for i in json_data['animals']:
-    this_breed = i['breeds']['primary']
-    if this_breed in all_breeds:
-        breed_count['Breed Count'][this_breed] = breed_count['Breed Count'][this_breed] + 1
-    else:
-        all_breeds.append(this_breed)
-        breed_count['Breed Count'][this_breed] = 1
-
-# Close file
-f.close()
-
-st.markdown("### List of Breeds")
-st.markdown(all_breeds)
-st.markdown("### List of Breeds With Counts")
-st.markdown(breed_count)
-st.markdown("### Chart of Breeds and Counts")
-breed_chart = pd.DataFrame(breed_count)
-breed_chart
-st.bar_chart(breed_chart)
-
-st.markdown("### Raw JSON Data")
-st.markdown(json_data)

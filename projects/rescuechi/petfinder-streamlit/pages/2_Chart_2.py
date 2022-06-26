@@ -1,46 +1,39 @@
-"""
-# My first app
-Here's our first attempt at using data to create a table:
-"""
-
 import streamlit as st
 import pandas as pd
-import numpy as np
-import time
-import math
 
-st.markdown("# Chart 2️")
-st.sidebar.markdown("# Chart 2️")
+st.markdown("# Static Petfinder JSON Data")
 
-range_for_chart = st.sidebar.slider(
-    'Select a range of values to be generated',
-    0, 100
-)
+# Opening JSON file
+f = open('projects/rescuechi/petfinder-streamlit/example-petfinder-dog-response.json')
 
-st.write("Here's our first attempt at using data to create a table:")
-st.write(pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-}))
+# returns JSON object as a dictionary
+json_data = json.load(f)
 
-progress_bar = st.sidebar.progress(0)
-status_text = st.sidebar.empty()
-last_rows = np.random.randn(1, 1)
-chart = st.line_chart(last_rows)
+st.markdown("*NOTE: Raw JSON data can be found at the bottom of the page*")
 
-for i in range(1, range_for_chart):
-    new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
-    percent_complete = math.ceil((1/range_for_chart) * (i+1) * 100)
-    #percent_complete = i
-    status_text.text("%i%% Complete" % percent_complete)
-    chart.add_rows(new_rows)
-    progress_bar.progress(percent_complete)
-    last_rows = new_rows
-    time.sleep(0.05)
+all_breeds = [] # there's probably a better way to do this, but keep track of which breeds we've already seen, and increment them in that case
+breed_count = {'Breed Count': {}}
 
-progress_bar.empty()
+# Iterating through the petfinder json
+for i in json_data['animals']:
+    this_breed = i['breeds']['primary']
+    if this_breed in all_breeds:
+        breed_count['Breed Count'][this_breed] = breed_count['Breed Count'][this_breed] + 1
+    else:
+        all_breeds.append(this_breed)
+        breed_count['Breed Count'][this_breed] = 1
 
-# Streamlit widgets automatically run the script from top to bottom. Since
-# this button is not connected to any other logic, it just causes a plain
-# rerun.
-st.button("Re-run")
+# Close file
+f.close()
+
+st.markdown("### List of Breeds")
+st.markdown(all_breeds)
+st.markdown("### List of Breeds With Counts")
+st.markdown(breed_count)
+st.markdown("### Chart of Breeds and Counts")
+breed_chart = pd.DataFrame(breed_count)
+breed_chart
+st.bar_chart(breed_chart)
+
+st.markdown("### Raw JSON Data")
+st.markdown(json_data)
