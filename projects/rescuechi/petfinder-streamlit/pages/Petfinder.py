@@ -10,16 +10,6 @@ from psycopg2.extras import RealDictCursor
 
 st.markdown("# Dynamic Petfinder Database Data")
 
-number_of_breeds_slider = st.sidebar.slider(
-    'How many breeds would you like to see?',
-    1, 100, (20)
-)
-
-los_sort_selectbox = st.sidebar.selectbox(
-    'Sort By Length of Stay',
-    ('DESC', 'ASC', 'NONE')
-)
-
 DATABASE_URL = os.environ['DATABASE_URL']
 
 #@st.experimental_singleton
@@ -61,9 +51,22 @@ total_num_breeds = len(breeds_array)
 #    if i > number_of_breeds_slider:
 #        break
 
+# Sidebar inputs for users to customize their results
 breeds_list = st.sidebar.multiselect(
-    'Choose the breeds you want to see',
+    'Choose the breeds you want to see (will ignore the number of breeds set below if this field is set)',
     breeds_array, []
+)
+
+if len(breeds_list) <= 0:
+    number_of_breeds_slider = st.sidebar.slider(
+        'How many breeds would you like to see?',
+        1, 100, (20)
+    )
+else:
+    number_of_breeds_slider = 0
+los_sort_selectbox = st.sidebar.selectbox(
+    'Sort By Length of Stay',
+    ('DESC', 'ASC', 'NONE')
 )
 
 conn = init_connection(True)
@@ -82,9 +85,12 @@ if len(breeds_list) > 0 and len(breeds_list) < len(breeds_array):
 
 
 los_sort = "ORDER BY AVG(los) %s" % los_sort_selectbox if los_sort_selectbox != 'NONE' else ''
+limit_query = ""
+if number_of_breeds_slider > 0:
+    limit_query = "LIMIT %s" % number_of_breeds_slider
 los_by_breed_query = """
-    SELECT breed_primary,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" %s GROUP BY breed_primary %s LIMIT %s;
-    """ % (DATABASE_TABLE, where_clause, los_sort, number_of_breeds_slider)
+    SELECT breed_primary,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" %s GROUP BY breed_primary %s %s;
+    """ % (DATABASE_TABLE, where_clause, los_sort, limit_query)
 
 st.markdown("#### Query")
 st.markdown(los_by_breed_query)
