@@ -16,7 +16,7 @@ export PETFINDER_SECRET=<your-api-secret>
 Then, install the requirements:
 
 ```bash
-pip-sync requirements.txt
+pip install -r requirements.txt
 ```
 
 # Running
