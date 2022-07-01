@@ -199,7 +199,14 @@ original_where_clause = where_clause
 all_select_boxes = [
     create_select_boxes("gender", "Gender", leftCol, rightCol),
     create_select_boxes("size", "Size", leftCol, rightCol),
-    create_select_boxes("coat", "Coat", leftCol, rightCol)
+    create_select_boxes("coat", "Coat", leftCol, rightCol),
+    create_select_boxes("age", "Age", leftCol, rightCol),
+    #create_select_boxes("good_with_children", "Good With Children", leftCol, rightCol),
+    #create_select_boxes("good_with_dogs", "Good With Dogs", leftCol, rightCol),
+    #create_select_boxes("good_with_cats", "Good With Cats", leftCol, rightCol),
+    #create_select_boxes("breed_mixed", "Is Mixed Breed?", leftCol, rightCol),
+    #create_select_boxes("attribute_special_needs", "Special Needs?", leftCol, rightCol),
+    #create_select_boxes("attribute_shots_current", "Up To Date On Shots?", leftCol, rightCol)
 ]
 
 # now find all selected values to use to build queries
