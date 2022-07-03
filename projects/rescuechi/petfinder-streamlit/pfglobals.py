@@ -86,7 +86,7 @@ def create_select_boxes(db_column, text, col1, col2, is_boolean):
     return {"db_column": db_column, "db_col_type": db_col_type, "left": select_box_left, "right": select_box_right}
 
 
-def create_comparison_chart(column, values, og_where_clause, main_db_col):
+def create_comparison_chart(column, values, og_where_clause, main_db_col, is_los):
     if not og_where_clause:
         comparison_where_clause = WHERE_START
     else:
@@ -116,15 +116,22 @@ def create_comparison_chart(column, values, og_where_clause, main_db_col):
     if comparison_where_clause.endswith(AND_START):
         comparison_where_clause = og_where_clause
 
-    comparison_los_by_breed_query = """
-        SELECT %s,AVG(los)::bigint as "LOS" FROM "%s" %s GROUP BY %s %s %s;
-        """ % (main_db_col, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
+    # if is_los then use LOS as the second column, otherwise just use count
+    # (could be expanded later to other things as well)
+    if is_los:
+        comparison_query = """
+            SELECT %s,AVG(los)::bigint as "LOS" FROM "%s" %s GROUP BY %s %s %s;
+            """ % (main_db_col, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
+    else:
+        comparison_query = """
+                    SELECT %s,Count(*) as "Count" FROM "%s" %s GROUP BY %s %s %s;
+                    """ % (main_db_col, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
 
     with column:
         if showQueries:
             st.markdown("#### Query")
-            st.markdown(comparison_los_by_breed_query)
-        query_results = run_query(comparison_los_by_breed_query, conn_dict)
+            st.markdown(comparison_query)
+        query_results = run_query(comparison_query, conn_dict)
         if len(query_results) > 0:
             st.bar_chart(create_data_frame(query_results, main_db_col))
         else:

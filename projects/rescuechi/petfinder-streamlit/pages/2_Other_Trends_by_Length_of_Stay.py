@@ -105,8 +105,8 @@ for select_boxes in all_select_boxes:
     right_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["right"]})
 
 # Create comparison charts
-pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, selected_list["db_column"])
-pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, selected_list["db_column"])
+pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, selected_list["db_column"], True)
+pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, selected_list["db_column"], True)
 #######################################################
 #             End of Side by Side Charts              #
 #######################################################

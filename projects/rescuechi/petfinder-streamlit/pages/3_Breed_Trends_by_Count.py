@@ -52,7 +52,7 @@ if len(pfglobals.breeds_list) > 0 and len(pfglobals.breeds_list) < len(pfglobals
     where_clause += ") "
 
 los_by_breed_query = """
-    SELECT breed_primary,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" %s GROUP BY breed_primary %s %s;
+    SELECT breed_primary,Count(*) as "Count" FROM "%s" %s GROUP BY breed_primary %s %s;
     """ % (pfglobals.DATABASE_TABLE, where_clause, pfglobals.los_sort, pfglobals.limit_query)
 
 if pfglobals.showQueries:
@@ -97,8 +97,8 @@ for select_boxes in all_select_boxes:
     right_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["right"]})
 
 # Create comparison charts
-pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, "breed_primary")
-pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, "breed_primary")
+pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, "breed_primary", False)
+pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, "breed_primary", False)
 #######################################################
 #             End of Side by Side Charts              #
 #######################################################
