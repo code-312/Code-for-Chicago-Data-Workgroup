@@ -1,39 +1,112 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
+import time
+import math
+import json
+import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
+import pfglobals
 
-st.markdown("# Static Petfinder JSON Data")
+st.markdown("# Chicago Rescue Dog Trends")
+st.markdown("## Other Trends from Petfinder Data")
+intro_text = "In 2021 alone, Chicago Animal Care and Control, the city’s only publicly funded shelter, took in 4," \
+             "122 stray, surrendered, or confiscated dogs. While some of the dogs who end up in the municipal shelter " \
+             "will be returned to their owner or adopted out directly, more than half of these animals are " \
+             "transferred to another animal rescue organization through the shelter’s Homeward Bound partnerships. To " \
+             "learn more about the journeys of these rescued pups, we pulled data from the Petfinder API for dogs " \
+             "located within 100 miles of Chicago. Petfinder is the most widely used online database of adoptable " \
+             "pets. Many Chicago animal rescue organizations maintain their own organization pages and adoptable pet " \
+             "listings on the site. The interactive data visualizations below can be used to illustrate how different " \
+             "dog characteristics affect the average length of stay of these Chicagoland dogs in a shelter or foster " \
+             "placement prior to adoption. "
+st.write(intro_text)
 
-# Opening JSON file
-f = open('projects/rescuechi/petfinder-streamlit/example-petfinder-dog-response.json')
+#######################################################
+# Sidebar inputs for users to customize their results #
+#######################################################
+st.sidebar.markdown("### Choose one or more values from a single attribute you'd like to see")
+st.sidebar.markdown("#### First selected option will be used")
 
-# returns JSON object as a dictionary
-json_data = json.load(f)
+attribute_info = [
+    {"db_column": "gender", "text": "Gender"},
+    {"db_column": "size", "text": "Size"},
+    {"db_column": "coat", "text": "Coat"},
+    {"db_column": "age", "text": "Age"}
+]
 
-st.markdown("*NOTE: Raw JSON data can be found at the bottom of the page*")
+attribute_lists = pfglobals.place_other_attributes_in_sidepanel(attribute_info)
 
-all_breeds = [] # there's probably a better way to do this, but keep track of which breeds we've already seen, and increment them in that case
-breed_count = {'Breed Count': {}}
+# st.write(st.session_state)
+st.sidebar.markdown("### Sorting Options")
 
-# Iterating through the petfinder json
-for i in json_data['animals']:
-    this_breed = i['breeds']['primary']
-    if this_breed in all_breeds:
-        breed_count['Breed Count'][this_breed] = breed_count['Breed Count'][this_breed] + 1
-    else:
-        all_breeds.append(this_breed)
-        breed_count['Breed Count'][this_breed] = 1
+los_sort_selectbox = st.sidebar.selectbox(
+    'Sort by number of results',
+    ('DESC', 'ASC', 'NONE')
+)
 
-# Close file
-f.close()
+#######################################################
+#               End sidebar inputs                    #
+#######################################################
 
-st.markdown("### List of Breeds")
-st.markdown(all_breeds)
-st.markdown("### List of Breeds With Counts")
-st.markdown(breed_count)
-st.markdown("### Chart of Breeds and Counts")
-breed_chart = pd.DataFrame(breed_count)
-breed_chart
-st.bar_chart(breed_chart)
+# Set up where clause for only the attributes the user has selected, if they selected any
+selected_list = []
+for attribute_list in attribute_lists:
+    num_iterations = 0
+    where_clause = ''
+    if len(attribute_list["selectbox"]) > 0:
+        selected_list = attribute_list
+        where_clause = " WHERE %s IN (" % attribute_list["db_column"]
+        for attribute_value in attribute_list["value_list"]:
+            if num_iterations > 0:
+                where_clause += ","
+            where_clause += "'%s'" % attribute_value
+            num_iterations += 1
+        where_clause += ") "
+        break
 
-st.markdown("### Raw JSON Data")
-st.markdown(json_data)
+los_by_attribute_query = """
+    SELECT %s,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" %s GROUP BY %s %s %s;
+    """ % (selected_list["db_column"], pfglobals.DATABASE_TABLE, where_clause, selected_list["db_column"], pfglobals.los_sort, pfglobals.limit_query)
+
+if pfglobals.showQueries:
+    st.markdown("#### Query")
+    st.markdown(los_by_attribute_query)
+
+st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_attribute_query, pfglobals.conn_dict), selected_list["db_column"]))
+
+#######################################################
+#                Side by Side Charts                  #
+#######################################################
+leftCol, rightCol = st.columns(2)
+# limit_query = ""
+original_where_clause = where_clause
+
+# create the select boxes for all the comparison attributes
+all_select_boxes = [
+    pfglobals.create_select_boxes("gender", "Gender", leftCol, rightCol, False),
+    pfglobals.create_select_boxes("size", "Size", leftCol, rightCol, False),
+    pfglobals.create_select_boxes("coat", "Coat", leftCol, rightCol, False),
+    pfglobals.create_select_boxes("age", "Age", leftCol, rightCol, False),
+    pfglobals.create_select_boxes("good_with_children", "Good With Children", leftCol, rightCol, True),
+    pfglobals.create_select_boxes("good_with_dogs", "Good With Dogs", leftCol, rightCol, True),
+    pfglobals.create_select_boxes("good_with_cats", "Good With Cats", leftCol, rightCol, True),
+    pfglobals.create_select_boxes("breed_mixed", "Is Mixed Breed?", leftCol, rightCol, True),
+    pfglobals.create_select_boxes("attribute_special_needs", "Special Needs?", leftCol, rightCol, True),
+    pfglobals.create_select_boxes("attribute_shots_current", "Up To Date On Shots?", leftCol, rightCol, True)
+]
+
+# now find all selected values to use to build queries
+left_values = []
+right_values = []
+for select_boxes in all_select_boxes:
+    left_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["left"]})
+    right_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["right"]})
+
+# Create comparison charts
+pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, selected_list["db_column"])
+pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, selected_list["db_column"])
+#######################################################
+#             End of Side by Side Charts              #
+#######################################################

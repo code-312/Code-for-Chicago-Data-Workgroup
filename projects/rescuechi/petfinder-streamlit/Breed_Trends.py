@@ -23,19 +23,11 @@ intro_text = "In 2021 alone, Chicago Animal Care and Control, the city’s only 
              "placement prior to adoption. "
 st.write(intro_text)
 
-# First get the list of breeds to be used for user interactions
-
-# i = 0
-# while i < len(breeds_results):
-#    breeds_array.append(breeds_results[i][0])
-#    i+=1
-
-#    if i > number_of_breeds_slider:
-#        break
-
 #######################################################
 # Sidebar inputs for users to customize their results #
 #######################################################
+st.sidebar.markdown("## Page-Level Chart Settings")
+
 if "selected_breeds" not in st.session_state:
     st.session_state['selected_breeds'] = []
 
@@ -73,7 +65,7 @@ if pfglobals.showQueries:
     st.markdown("#### Query")
     st.markdown(los_by_breed_query)
 
-st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_breed_query, pfglobals.conn_dict)))
+st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_breed_query, pfglobals.conn_dict), "breed_primary"))
 
 #######################################################
 #                Side by Side Charts                  #
@@ -104,5 +96,8 @@ for select_boxes in all_select_boxes:
     right_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["right"]})
 
 # Create comparison charts
-pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause)
-pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause)
+pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, "breed_primary")
+pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, "breed_primary")
+#######################################################
+#             End of Side by Side Charts              #
+#######################################################

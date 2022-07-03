@@ -38,9 +38,9 @@ conn_no_dict = init_connection(False)
 conn_dict = init_connection(True)
 
 
-def create_data_frame(breeds_los_results):
-    df = pd.DataFrame().from_dict(breeds_los_results)
-    df.set_index("breed_primary", inplace=True)
+def create_data_frame(data, index_column):
+    df = pd.DataFrame().from_dict(data)
+    df.set_index(index_column, inplace=True)
     return df
 
 
@@ -86,7 +86,7 @@ def create_select_boxes(db_column, text, col1, col2, is_boolean):
     return {"db_column": db_column, "db_col_type": db_col_type, "left": select_box_left, "right": select_box_right}
 
 
-def create_comparison_chart(column, values, og_where_clause):
+def create_comparison_chart(column, values, og_where_clause, main_db_col):
     if not og_where_clause:
         comparison_where_clause = WHERE_START
     else:
@@ -117,8 +117,8 @@ def create_comparison_chart(column, values, og_where_clause):
         comparison_where_clause = og_where_clause
 
     comparison_los_by_breed_query = """
-        SELECT breed_primary,AVG(los)::bigint as "LOS" FROM "%s" %s GROUP BY breed_primary %s %s;
-        """ % (DATABASE_TABLE, comparison_where_clause, los_sort, limit_query)
+        SELECT %s,AVG(los)::bigint as "LOS" FROM "%s" %s GROUP BY %s %s %s;
+        """ % (main_db_col, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
 
     with column:
         if showQueries:
@@ -126,7 +126,7 @@ def create_comparison_chart(column, values, og_where_clause):
             st.markdown(comparison_los_by_breed_query)
         query_results = run_query(comparison_los_by_breed_query, conn_dict)
         if len(query_results) > 0:
-            st.bar_chart(create_data_frame(query_results))
+            st.bar_chart(create_data_frame(query_results, main_db_col))
         else:
             st.write("Uh oh, no results were found with this criteria!  Please update your parameters to find results.")
 
@@ -160,6 +160,38 @@ def place_breeds_in_sidepanel():
         number_of_breeds_slider = 0
 
     return number_of_breeds_slider
+
+
+def place_other_attributes_in_sidepanel(attribute_info_array):
+    return_lists = []
+
+    # first create a radio button with the possible attributes so that the user can choose the one they want
+    attributes_array = []
+    for attribute_info in attribute_info_array:
+        attributes_array.append(attribute_info["text"])
+
+    attributes_radio = st.sidebar.radio(
+        "Choose an attribute",
+        attributes_array
+    )
+
+    # now create a multiselect box for each attribute
+    for attribute_info in attribute_info_array:
+        db_column = attribute_info["db_column"]
+        text = attribute_info["text"]
+
+        if text == attributes_radio:
+            array_of_items = create_array_of_db_values(db_column)
+
+            selectbox = st.sidebar.multiselect(
+                text,
+                array_of_items,
+                default=array_of_items
+            )
+
+            return_lists.append({"selectbox": selectbox, "value_list": selectbox, "db_column": db_column, "text": text})
+
+    return return_lists
 
 
 def place_los_sort_in_sidepanel(number_of_breeds_slider):
