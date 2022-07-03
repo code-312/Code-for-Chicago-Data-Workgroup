@@ -2,6 +2,8 @@
 # My first app
 Here's our first attempt at using data to create a table:
 """
+#import pydevd_pycharm
+#pydevd_pycharm.settrace('localhost', port=8501, stdoutToServer=True, stderrToServer=True)
 
 import streamlit as st
 import pandas as pd
