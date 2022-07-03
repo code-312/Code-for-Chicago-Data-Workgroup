@@ -4,7 +4,7 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
-showQueries = os.environ['PETFINDER_STREAMLIT_SHOW_QUERIES']
+showQueries = bool(os.environ['PETFINDER_STREAMLIT_SHOW_QUERIES'])
 
 DATABASE_URL = os.environ['HEROKU_POSTGRESQL_AMBER_URL']
 WHERE_START = " WHERE "
