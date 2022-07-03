@@ -1,51 +1,138 @@
-from sqlalchemy import create_engine
+import os
+import sqlalchemy
 from pathlib import Path
 import pandas as pd
 
 DATA_DIR = Path(__file__).parent / "data"
-TARGET_TABLE_NAME = "test_petfinder_table"
+FILE_TO_APPEND = "chicago_animals_cleaned.pkl"
+TARGET_TABLE_NAME = "petfinder_with_dates"
 
-# this should probably be collected programmatically?
-uri = "postgres://nojihrddrslbgo:776d62b321194d8811fca195eedb1d45a18361ddc6d3ff4bc2dc1e82fb5e9350@ec2-34-201-95-176.compute-1.amazonaws.com:5432/dbphfvpp1tnhjv"
+def get_db_uri():
+    """
+    Returns
+    -------
+    uri : str
+        Postgres uri that can be used to connect to our database
+    """
+    uri = os.getenv("DATABASE_URL")
+    if uri is not None:
+        # sqlalchemy has a little bit of funky behavior, see this heroku help article:
+        # https://help.heroku.com/ZKNTJQSK/why-is-sqlalchemy-1-4-x-not-connecting-to-heroku-postgres
+        if uri.startswith("postgres://"):
+            uri = uri.replace("postgres://", "postgresql://", 1)
+        return uri
+    else:
+        raise EnvironmentError(
+            """
+              To run this script, you'll need to set the Heroku Postgres URI as an 
+              environment variable called `DATABASE_URL`.
+              You can do this by either copy and pasting from the Heroku website:
+              export DATABASE_URL=<paste-uri-here>
+              Or by installing the heroku CLI and running:
+              export DATABASE_URL=$(heroku config:get HEROKU_POSTGRESQL_AMBER_URL --app  codeforchicago-rescuechi)
+              """
+        )
 
-# https://help.heroku.com/ZKNTJQSK/why-is-sqlalchemy-1-4-x-not-connecting-to-heroku-postgres
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://", 1)
+def table_exists(engine: sqlalchemy.engine.Engine, table_name: str):
+    """
+    Given a database connection and table name, checks whether or not the table exists.
+    
+    Parameters
+    ----------
+    engine : sqlalchemy.engine.Engine
+        Engine connection to the database
+    table_name : str
+        Name of the table to check for
+    
+    Returns
+    -------
+    bool
+        Describes whether a table with the specified name exists in our database
+    """
+    exists_query = f"""
+    SELECT EXISTS (
+        SELECT FROM information_schema.tables
+        WHERE table_name = '{table_name}'
+    );
+    """
+    exists = engine.execute(exists_query).fetchone()[0]
+    return exists
 
-# link to your database
-engine = create_engine(uri, echo = False)
+def print_row_count(engine: sqlalchemy.engine.Engine):
+    """Prints a descriptive string about the number of rows in the global target table.
 
-# this is the data we'll append to the database
-df = pd.read_pickle(DATA_DIR / "chicago_animals.pkl")
+    Parameters
+    ----------
+    engine : sqlalchemy.engine.Engine
+        Connection to the postgres database
+    """
+    exists = table_exists(engine, TARGET_TABLE_NAME)
+    if not exists:
+        print(f"Target table {TARGET_TABLE_NAME} does not yet exist.")
+    else:
+        num_rows = engine.execute(f"SELECT count(*) FROM {TARGET_TABLE_NAME}").fetchone()
+        print(f"There are {num_rows} rows in table {TARGET_TABLE_NAME}")
 
-# TEMP - drop table if exists if desired
-engine.execute(f"DROP TABLE IF EXISTS {TARGET_TABLE_NAME}")
 
-# this is one place where we might do some cleanup on the file
-# at a minimum, can't have dictionaries as data elements
-df = df[
-    ["id", "type", "species", "age", "gender", "size", "coat", "name", "description", "status", "status_changed_at", "published_at"]
-]
+def append_to_table(engine: sqlalchemy.engine.Engine):
+    """Appends rows from the globally specified file to append to the target table.
 
-# we don't really need all the data for testing, just take a few rows
-df = df.head(100)
+    Parameters
+    ----------
+    engine : sqlalchemy.engine.Engine
+        Connection to the postgres database
+    """
 
-df.to_sql(TARGET_TABLE_NAME, con = engine, if_exists='append')
+    # this is the cleaned data that we'll append to the database
+    df = pd.read_pickle(DATA_DIR / FILE_TO_APPEND)
 
-# run a quick test to see how many rows there are
-print(engine.execute(f"SELECT count(*) FROM {TARGET_TABLE_NAME}").fetchone())
+    # append to the table if it already exists
+    df.to_sql(TARGET_TABLE_NAME, con=engine, if_exists="append")
 
-# delete any duplicate records, in case the same data gets added in multiple times
-delete_dupes_query = f"""
-DELETE FROM {TARGET_TABLE_NAME} a USING (
-    SELECT MIN(ctid) as ctid, id
-    FROM {TARGET_TABLE_NAME} 
-    GROUP BY id HAVING COUNT(*) > 1
-) b
-WHERE a.id = b.id 
-AND a.ctid <> b.ctid
-"""
-engine.execute(delete_dupes_query)
 
-# check final number of rows left in the table
-print(engine.execute(f"SELECT count(*) FROM {TARGET_TABLE_NAME}").fetchone())
+def drop_duplicate_rows(engine: sqlalchemy.engine.Engine):
+    """Drops rows with dupliccatd 'id' values.
+    
+    Parameters
+    ----------
+    engine : sqlalchemy.engine.Engine
+        Connection to the postgres database  
+    """
+
+    # delete any duplicate records, in case the same data gets added in multiple times
+    delete_dupes_query = f"""
+    DELETE FROM {TARGET_TABLE_NAME} a USING (
+        SELECT MIN(ctid) as ctid, id
+        FROM {TARGET_TABLE_NAME} 
+        GROUP BY id HAVING COUNT(*) > 1
+    ) b
+    WHERE a.id = b.id 
+    AND a.ctid <> b.ctid
+    """
+    engine.execute(delete_dupes_query)
+
+if __name__=="__main__":
+    # get the uri from environment variables
+    uri = get_db_uri()
+    
+    # link to the postgres database
+    engine = sqlalchemy.create_engine(uri, echo=False)
+    print("Successfully connected to postgres")
+    
+    # check the current number of rows in the table
+    print("Before modifying table: ")
+    print_row_count(engine)
+    
+    # append datafile to table
+    append_to_table(engine)
+    
+    # check the current number of rows in the table
+    print("After appending data: ")
+    print_row_count(engine)
+    
+    # remove any duplicated rows
+    drop_duplicate_rows(engine)
+    
+    # check the current number of rows in the table
+    print("After dropping duplicate rows: ")
+    print_row_count(engine)
