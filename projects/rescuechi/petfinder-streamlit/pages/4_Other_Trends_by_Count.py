@@ -11,10 +11,11 @@ import pfglobals
 
 st.markdown("# Chicago Rescue Dog Trends")
 st.markdown("## Other Trends from Petfinder Data")
-st.markdown("### How do different dog characteristics (gender, size, coat length, age) affect length of stay?")
+st.markdown("### How do different dog characteristics (gender, size, coat length, age) affect the number of dogs "
+            "waiting to be adopted?")
 st.markdown("Use the filter widget in the sidebar to select values for characteristics to compare on the graphs "
-            "below. These graphs illustrate how these characteristics impact average length of stay for dogs of all "
-            "breeds.")
+            "below. These graphs illustrate how these characteristics impact number of dogs waiting to be adopted for "
+            "dogs of all breeds.")
 
 #######################################################
 # Sidebar inputs for users to customize their results #
@@ -73,11 +74,11 @@ st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_attribute_qu
 #                Side by Side Charts                  #
 #######################################################
 st.markdown("### How do different dog characteristics (gender, size, coat length, age, etc.) interact with other "
-            "attributes to affect length of stay?")
+            "attributes to affect number of dogs waiting to be adopted?")
 st.markdown("Use the filter widget in the sidebar to select a specific attribute to visualize.  Then select values "
             "for other characteristics from the drop down lists below to compare on the graphs. These side-by-side "
-            "graphs illustrate how these characteristics impact average length of stay for dogs with the specified "
-            "attributes.")
+            "graphs illustrate how these characteristics impact the number of dogs waiting for adoption for dogs with "
+            "the specified attributes.")
 
 leftCol, rightCol = st.columns(2)
 # limit_query = ""

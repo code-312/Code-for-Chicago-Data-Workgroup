@@ -11,10 +11,9 @@ import pfglobals
 
 st.markdown("# Chicago Rescue Dog Trends")
 st.markdown("## Breed Trends from Petfinder Data")
-st.markdown("### How does dog breed affect average length of time from intake to adoption?")
-st.markdown("Use the filter widget in the "
-            "sidebar to select specific breeds to visualize, or to select a specific number of random breeds to see "
-            "visualized at one time.")
+st.markdown("### How does dog breed relate to the number of dogs waiting to be adopted?")
+st.markdown("Use the filter widget in the sidebar to select specific breeds to visualize, or to select a specific "
+            "number of random breeds to see visualized at one time.")
 
 
 #######################################################
@@ -65,7 +64,7 @@ st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_breed_query,
 #                Side by Side Charts                  #
 #######################################################
 st.markdown("### How do different dog characteristics (gender, size, coat length, age, etc.) interact with breed to "
-            "affect length of stay?")
+            "affect the number of dogs waiting to be adopted?")
 st.markdown("Use the filter widget in the sidebar to select specific breeds to visualize, or to select a specific "
             "number of random breeds to see visualized at one time. Then select values for other characteristics from "
             "the drop down lists below to compare on the graphs. These side-by-side graphs illustrate how these "
