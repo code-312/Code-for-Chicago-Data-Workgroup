@@ -15,7 +15,9 @@ st.markdown("# Dynamic Petfinder Database Data")
 DATABASE_URL = os.environ['HEROKU_POSTGRESQL_AMBER_URL']
 WHERE_START = " WHERE "
 AND_START = " AND "
-
+BOOLEAN_DB_TYPE = "boolean"
+STRING_DB_TYPE = "string"
+DEFAULT_DROPDOWN_TEXT = "Select a value to apply"
 # @st.experimental_singleton
 def init_connection(returnDict):
     if returnDict:
@@ -52,10 +54,17 @@ def create_array_of_db_values(db_column):
 
     return values_array
 
+
 # Create select boxes for the left and right side of charts
-def create_select_boxes(db_column, text, col1, col2):
-    values = create_array_of_db_values(db_column)
-    values.insert(0, "")
+# isBoolean determines whether the DB column is a boolean, and thus whether we need to remove quotes
+def create_select_boxes(db_column, text, col1, col2, is_boolean):
+    db_col_type = STRING_DB_TYPE
+    if is_boolean:
+        # if we execute a query to find all True/False/None then the app takes way too long to load
+        values = ["True", "False"]
+    else:
+        values = create_array_of_db_values(db_column)
+    values.insert(0, DEFAULT_DROPDOWN_TEXT)
 
     with col1:
         select_box_left = st.selectbox(
@@ -70,7 +79,7 @@ def create_select_boxes(db_column, text, col1, col2):
             values,
             key=db_column + "_right"
         )
-    return {"db_column": db_column, "left": select_box_left, "right": select_box_right}
+    return {"db_column": db_column, "db_col_type": db_col_type, "left": select_box_left, "right": select_box_right}
 
 
 def create_comparison_chart(column, values, og_where_clause):
@@ -81,11 +90,18 @@ def create_comparison_chart(column, values, og_where_clause):
 
     i = 0
     while i < len(values):
-        if i > 0 and values[i]["select_box"] and (comparison_where_clause != WHERE_START) and not (comparison_where_clause.endswith(AND_START)):
+        if i > 0 and values[i]["select_box"] != DEFAULT_DROPDOWN_TEXT and (comparison_where_clause != WHERE_START) and not (comparison_where_clause.endswith(AND_START)):
             comparison_where_clause += " AND "
-        if values[i]["select_box"]:
+        if values[i]["select_box"] != DEFAULT_DROPDOWN_TEXT and values[i]["db_col_type"] == STRING_DB_TYPE:
             comparison_where_clause += values[i]["db_column"] + "='" + values[i][
                 "select_box"] + "'"  # need to get the attribute key in here (add to object above)
+        elif values[i]["select_box"] != DEFAULT_DROPDOWN_TEXT and values[i]["db_col_type"] == BOOLEAN_DB_TYPE:
+            if values[i]["select_box"]:
+                comparison_where_clause += values[i]["db_column"] + "=True"
+            elif not values[i]["select_box"]:
+                comparison_where_clause += values[i]["db_column"] + "=False"
+            else:
+                comparison_where_clause += values[i]["db_column"] + "=None"
         i += 1
 
     # this means our where clause is empty, so clear it out
@@ -197,24 +213,24 @@ original_where_clause = where_clause
 
 # create the select boxes for all the comparison attributes
 all_select_boxes = [
-    create_select_boxes("gender", "Gender", leftCol, rightCol),
-    create_select_boxes("size", "Size", leftCol, rightCol),
-    create_select_boxes("coat", "Coat", leftCol, rightCol),
-    create_select_boxes("age", "Age", leftCol, rightCol),
-    #create_select_boxes("good_with_children", "Good With Children", leftCol, rightCol),
-    #create_select_boxes("good_with_dogs", "Good With Dogs", leftCol, rightCol),
-    #create_select_boxes("good_with_cats", "Good With Cats", leftCol, rightCol),
-    #create_select_boxes("breed_mixed", "Is Mixed Breed?", leftCol, rightCol),
-    #create_select_boxes("attribute_special_needs", "Special Needs?", leftCol, rightCol),
-    #create_select_boxes("attribute_shots_current", "Up To Date On Shots?", leftCol, rightCol)
+    create_select_boxes("gender", "Gender", leftCol, rightCol, False),
+    create_select_boxes("size", "Size", leftCol, rightCol, False),
+    create_select_boxes("coat", "Coat", leftCol, rightCol, False),
+    create_select_boxes("age", "Age", leftCol, rightCol, False),
+    create_select_boxes("good_with_children", "Good With Children", leftCol, rightCol, True),
+    create_select_boxes("good_with_dogs", "Good With Dogs", leftCol, rightCol, True),
+    create_select_boxes("good_with_cats", "Good With Cats", leftCol, rightCol, True),
+    create_select_boxes("breed_mixed", "Is Mixed Breed?", leftCol, rightCol, True),
+    create_select_boxes("attribute_special_needs", "Special Needs?", leftCol, rightCol, True),
+    create_select_boxes("attribute_shots_current", "Up To Date On Shots?", leftCol, rightCol, True)
 ]
 
 # now find all selected values to use to build queries
 left_values = []
 right_values = []
 for select_boxes in all_select_boxes:
-    left_values.append({"db_column": select_boxes["db_column"], "select_box": select_boxes["left"]})
-    right_values.append({"db_column": select_boxes["db_column"], "select_box": select_boxes["right"]})
+    left_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["left"]})
+    right_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["right"]})
 
 # Create comparison charts
 create_comparison_chart(leftCol, left_values, original_where_clause)
