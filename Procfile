@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run projects/rescuechi/petfinder-streamlit/Breed_Trends.py
+web: sh setup.sh && streamlit run projects/rescuechi/petfinder-streamlit/Home.py

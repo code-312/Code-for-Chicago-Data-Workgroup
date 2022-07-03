@@ -11,17 +11,10 @@ import pfglobals
 
 st.markdown("# Chicago Rescue Dog Trends")
 st.markdown("## Other Trends from Petfinder Data")
-intro_text = "In 2021 alone, Chicago Animal Care and Control, the city’s only publicly funded shelter, took in 4," \
-             "122 stray, surrendered, or confiscated dogs. While some of the dogs who end up in the municipal shelter " \
-             "will be returned to their owner or adopted out directly, more than half of these animals are " \
-             "transferred to another animal rescue organization through the shelter’s Homeward Bound partnerships. To " \
-             "learn more about the journeys of these rescued pups, we pulled data from the Petfinder API for dogs " \
-             "located within 100 miles of Chicago. Petfinder is the most widely used online database of adoptable " \
-             "pets. Many Chicago animal rescue organizations maintain their own organization pages and adoptable pet " \
-             "listings on the site. The interactive data visualizations below can be used to illustrate how different " \
-             "dog characteristics affect the average length of stay of these Chicagoland dogs in a shelter or foster " \
-             "placement prior to adoption. "
-st.write(intro_text)
+st.markdown("### How do different dog characteristics (gender, size, coat length, age) affect length of stay?")
+st.markdown("Use the filter widget in the sidebar to select values for characteristics to compare on the graphs "
+            "below. These graphs illustrate how these characteristics impact average length of stay for dogs of all "
+            "breeds.")
 
 #######################################################
 # Sidebar inputs for users to customize their results #
@@ -79,6 +72,13 @@ st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_attribute_qu
 #######################################################
 #                Side by Side Charts                  #
 #######################################################
+st.markdown("### How do different dog characteristics (gender, size, coat length, age, etc.) interact with other "
+            "attributes to affect length of stay?")
+st.markdown("Use the filter widget in the sidebar to select a specific attribute to visualize.  Then select values "
+            "for other characteristics from the drop down lists below to compare on the graphs. These side-by-side "
+            "graphs illustrate how these characteristics impact average length of stay for dogs with the specified "
+            "attributes.")
+
 leftCol, rightCol = st.columns(2)
 # limit_query = ""
 original_where_clause = where_clause
