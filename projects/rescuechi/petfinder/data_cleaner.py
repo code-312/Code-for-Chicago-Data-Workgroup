@@ -3,10 +3,18 @@ from pathlib import Path
 
 DATA_FOLDER = Path(__file__).parent / "data"
 
-def calc_los(raw_published_col, raw_status_change_col):
+def calc_los(raw_published_col, raw_status_change_col) -> pd.Series:
     """
-    Calculate the length of stay
+    Calculate the length of stay.
 
+    Parameters
+    ----------
+    raw_published_col : pd.Series
+        Raw column as returned from the Petfinder API that contains the timestamp that
+        the pet was first put on the website.
+    raw_status_change_col : pd.Series
+        Raw column as returned from te Petfinder API that contains the timestamp that
+        the pet status was changed (presumably from 'adoptable' -> 'adopted')
     Returns
     -------
     Column with the length of stay for each animal, as an integer with units of number
@@ -20,10 +28,24 @@ def calc_los(raw_published_col, raw_status_change_col):
     los_days.name = "los"
     return los_days
 
-def explode_column(col, col_prefix):
+def explode_column(col, col_prefix) -> pd.DataFrame:
     """
     Take a column that cocntains a dictionary (e.g. breed, colors) and split it into
-    multiple columns, one for each key of the dictionary
+    multiple columns, one for each key of the dictionary.
+
+    Parameters
+    ----------
+    col : pd.Series
+        Single column containing dictionaries of values. For example, the column of
+        breeds contains a 'primary', 'secondary', etc. breed per dog.
+    col_prefix : str
+        Prefix to prepend to each column. For example, if the dictionary has a key of
+        'primary' and the col_prefix is set to 'breed', this will produce a column
+        called 'breed_primary'
+
+    Returns
+    -------
+    Dataframe with one column per key in the original column dictionary
     """
     exploded = col.apply(pd.Series)
     exploded.columns = [f"{col_prefix}_{c}" for c in exploded.columns]
@@ -32,6 +54,7 @@ def explode_column(col, col_prefix):
 
 if __name__ == "__main__":
 
+    # read in the raw data
     data_file = DATA_FOLDER / "chicago_animals.pkl"
     df_raw = pd.read_pickle(data_file)
 
