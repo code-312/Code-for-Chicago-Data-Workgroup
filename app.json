@@ -1,0 +1,12 @@
+{
+  "name": "Start on Heroku: Python",
+  "description": "A barebones Python app, which can easily be deployed to Heroku.",
+  "image": "heroku/python",
+  "repository": "http://github.com/ecooperman/rescuepets.git",
+  "keywords": ["python", "streamlit" ],
+  "addons": [ "heroku-postgresql" ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+}
