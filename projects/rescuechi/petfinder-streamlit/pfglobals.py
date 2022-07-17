@@ -4,6 +4,8 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
+import plotly.express as px
+
 showQueries = os.environ['PETFINDER_STREAMLIT_SHOW_QUERIES'] == "True"
 
 DATABASE_URL = os.environ['HEROKU_POSTGRESQL_AMBER_URL']
@@ -86,6 +88,70 @@ def create_select_boxes(db_column, text, col1, col2, is_boolean):
     return {"db_column": db_column, "db_col_type": db_col_type, "left": select_box_left, "right": select_box_right}
 
 
+def construct_where_clause(values, og_where_clause):
+    if not og_where_clause:
+        comparison_where_clause = WHERE_START
+    else:
+        comparison_where_clause = og_where_clause + " AND "
+    i = 0
+    while i < len(values):
+        if i > 0 and values[i]["select_box"] != DEFAULT_DROPDOWN_TEXT and (comparison_where_clause != WHERE_START) and not (comparison_where_clause.endswith(AND_START)):
+            comparison_where_clause += " AND "
+        if values[i]["select_box"] != DEFAULT_DROPDOWN_TEXT and values[i]["db_col_type"] == STRING_DB_TYPE:
+            comparison_where_clause += values[i]["db_column"] + "='" + values[i][
+                "select_box"] + "'"  # need to get the attribute key in here (add to object above)
+        elif values[i]["select_box"] != DEFAULT_DROPDOWN_TEXT and values[i]["db_col_type"] == BOOLEAN_DB_TYPE:
+            if values[i]["select_box"]:
+                comparison_where_clause += values[i]["db_column"] + "=True"
+            elif not values[i]["select_box"]:
+                comparison_where_clause += values[i]["db_column"] + "=False"
+            else:
+                comparison_where_clause += values[i]["db_column"] + "=None"
+        i += 1    
+
+    # this means our where clause is empty, so clear it out
+    if comparison_where_clause == WHERE_START:
+        comparison_where_clause = ""
+
+    # this means we have breeds set but nothing else, so set back to the breeds where query
+    if comparison_where_clause.endswith(AND_START):
+        comparison_where_clause = og_where_clause
+    
+    return comparison_where_clause
+    
+def construct_comparison_query(left_values, right_values, og_where_clause, group_by_col, target_col):
+    left_where_clause = construct_where_clause(left_values, og_where_clause)
+    right_where_clause = construct_where_clause(right_values, og_where_clause)
+    
+    if target_col == "count":
+        target_query = "count(*)"
+    elif target_col == "los":
+        target_query = "AVG(los)::bigint"
+    else:
+        raise ValueError
+    
+    # we renamed the col in the aggregated dataframe
+    mod_los_sort = los_sort.replace("AVG(los)", "av")
+    
+    comparison_query = f"""
+    WITH a AS
+    (SELECT {group_by_col}, {target_query} AS left_group FROM {DATABASE_TABLE} {left_where_clause} GROUP BY {group_by_col}),
+    b AS (SELECT {group_by_col}, {target_query} AS right_group FROM {DATABASE_TABLE} {right_where_clause} GROUP BY {group_by_col})
+    SELECT a.{group_by_col}, left_group, right_group, (left_group+right_group)/2 as av FROM (a INNER JOIN b ON a.{group_by_col} = b.{group_by_col})
+    {mod_los_sort}
+    {limit_query}
+    """
+    
+    return comparison_query
+    
+        
+def get_comparison_dataframe(left_values, right_values, og_where_clause, group_by_col, target_col):
+    comparison_query = construct_comparison_query(left_values, right_values, og_where_clause, group_by_col, target_col)
+    query_results = run_query(comparison_query, conn_dict)
+    df = create_data_frame(query_results, group_by_col)
+    return df
+        
+
 def create_comparison_chart(column, values, og_where_clause, main_db_col, is_los):
     if not og_where_clause:
         comparison_where_clause = WHERE_START
@@ -133,7 +199,14 @@ def create_comparison_chart(column, values, og_where_clause, main_db_col, is_los
             st.markdown(comparison_query)
         query_results = run_query(comparison_query, conn_dict)
         if len(query_results) > 0:
-            st.bar_chart(create_data_frame(query_results, main_db_col))
+            if is_los:
+                y_colname = "LOS"
+            else:
+                y_colname = "Count"
+            df = create_data_frame(query_results, main_db_col)
+            plotly_obj = px.bar(df, x=df.index, y=y_colname)
+            st.plotly_chart(plotly_obj)
+            # st.bar_chart(create_data_frame(query_results, main_db_col))
         else:
             st.write("Uh oh, no results were found with this criteria!  Please update your parameters to find results.")
 
