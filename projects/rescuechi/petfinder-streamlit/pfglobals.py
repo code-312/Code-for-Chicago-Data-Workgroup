@@ -3,15 +3,25 @@ import pandas as pd
 import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
+import plotly.express as px
 
 showQueries = os.environ['PETFINDER_STREAMLIT_SHOW_QUERIES'] == "True"
-
+showChartType = os.environ['PETFINDER_STREAMLIT_CHART_TYPE']
 DATABASE_URL = os.environ['HEROKU_POSTGRESQL_AMBER_URL']
+
+SIMPLE_CHART_TYPE = "simple"
+ADVANCED_CHART_TYPE = "advanced"
+ALL_CHART_TYPES = "all"
+
 WHERE_START = " WHERE "
 AND_START = " AND "
 BOOLEAN_DB_TYPE = "boolean"
 STRING_DB_TYPE = "string"
 DEFAULT_DROPDOWN_TEXT = "No value applied"
+
+LENGTH_OF_STAY_TEXT = "Length of Stay (Avg)"
+LENGTH_OF_STAY_SHORT_TEXT = "LOS"
+COUNT_TEXT = "Count"
 
 los_sort = ""
 limit_query = ""
@@ -120,12 +130,12 @@ def create_comparison_chart(column, values, og_where_clause, main_db_col, is_los
     # (could be expanded later to other things as well)
     if is_los:
         comparison_query = """
-            SELECT %s,AVG(los)::bigint as "LOS" FROM "%s" %s GROUP BY %s %s %s;
-            """ % (main_db_col, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
+            SELECT %s,AVG(los)::bigint as "LOS",Count(*) as "%s" FROM "%s" %s GROUP BY %s %s %s;
+            """ % (main_db_col, COUNT_TEXT, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
     else:
         comparison_query = """
-                    SELECT %s,Count(*) as "Count" FROM "%s" %s GROUP BY %s %s %s;
-                    """ % (main_db_col, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
+                    SELECT %s,Count(*) as "%s" FROM "%s" %s GROUP BY %s %s %s;
+                    """ % (main_db_col, COUNT_TEXT, DATABASE_TABLE, comparison_where_clause, main_db_col, los_sort, limit_query)
 
     with column:
         if showQueries:
@@ -133,7 +143,11 @@ def create_comparison_chart(column, values, og_where_clause, main_db_col, is_los
             st.markdown(comparison_query)
         query_results = run_query(comparison_query, conn_dict)
         if len(query_results) > 0:
-            st.bar_chart(create_data_frame(query_results, main_db_col))
+            df = create_data_frame(query_results, main_db_col)
+            if is_los:
+                show_bar_chart(df, LENGTH_OF_STAY_SHORT_TEXT, COUNT_TEXT, True)
+            else:
+                show_bar_chart(df, COUNT_TEXT, "", False)
         else:
             st.write("Uh oh, no results were found with this criteria!  Please update your parameters to find results.")
 
@@ -219,3 +233,31 @@ if "DATABASE_TABLE" in os.environ:
     DATABASE_TABLE = os.environ['DATABASE_TABLE']
 else:
     DATABASE_TABLE = "petfinder_with_dates"
+
+
+def show_bar_chart(data_frame, plotly_y, plotly_text, remove_count):
+    plotly_bar = ""
+    if not showChartType or showChartType == ALL_CHART_TYPES or showChartType == ADVANCED_CHART_TYPE:
+        if plotly_text:
+            plotly_bar = px.bar(
+                data_frame,
+                y=plotly_y,
+                color=plotly_text,
+                text=plotly_text,
+            )
+        else:
+            plotly_bar = px.bar(
+                data_frame,
+                y=plotly_y
+            )
+
+    if remove_count:
+        data_frame = data_frame.drop(COUNT_TEXT, 1)  # Remove count column since streamlit doesn't handle it well
+
+    if showChartType == ALL_CHART_TYPES:
+        st.bar_chart(data_frame)
+        st.plotly_chart(plotly_bar, use_container_width=True)
+    elif showChartType == SIMPLE_CHART_TYPE:
+        st.bar_chart(data_frame)
+    else:
+        st.plotly_chart(plotly_bar, use_container_width=True)
