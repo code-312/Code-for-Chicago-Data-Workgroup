@@ -7,6 +7,7 @@ import json
 import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
+import plotly.express as px
 import pfglobals
 
 st.markdown("# Chicago Rescue Dog Trends")
@@ -52,14 +53,15 @@ if len(pfglobals.breeds_list) > 0 and len(pfglobals.breeds_list) < len(pfglobals
     where_clause += ") "
 
 los_by_breed_query = """
-    SELECT breed_primary,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" %s GROUP BY breed_primary %s %s;
-    """ % (pfglobals.DATABASE_TABLE, where_clause, pfglobals.los_sort, pfglobals.limit_query)
+    SELECT breed_primary,AVG(los)::bigint as "%s",Count(*) as "%s" FROM "%s" %s GROUP BY breed_primary %s %s;
+    """ % (pfglobals.LENGTH_OF_STAY_TEXT, pfglobals.COUNT_TEXT, pfglobals.DATABASE_TABLE, where_clause, pfglobals.los_sort, pfglobals.limit_query)
 
 if pfglobals.showQueries:
     st.markdown("#### Query")
     st.markdown(los_by_breed_query)
 
-st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_breed_query, pfglobals.conn_dict), "breed_primary"))
+df = pfglobals.create_data_frame(pfglobals.run_query(los_by_breed_query, pfglobals.conn_dict), "breed_primary")
+pfglobals.show_bar_chart(df, pfglobals.LENGTH_OF_STAY_TEXT, pfglobals.COUNT_TEXT, True)
 
 #######################################################
 #                Side by Side Charts                  #

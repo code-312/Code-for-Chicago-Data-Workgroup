@@ -60,14 +60,15 @@ for attribute_list in attribute_lists:
         break
 
 los_by_attribute_query = """
-    SELECT %s,AVG(los)::bigint as "Length of Stay (Avg)" FROM "%s" %s GROUP BY %s %s %s;
-    """ % (selected_list["db_column"], pfglobals.DATABASE_TABLE, where_clause, selected_list["db_column"], pfglobals.los_sort, pfglobals.limit_query)
+    SELECT %s,AVG(los)::bigint as "%s",Count(*) as "%s" FROM "%s" %s GROUP BY %s %s %s;
+    """ % (selected_list["db_column"], pfglobals.LENGTH_OF_STAY_TEXT, pfglobals.COUNT_TEXT, pfglobals.DATABASE_TABLE, where_clause, selected_list["db_column"], pfglobals.los_sort, pfglobals.limit_query)
 
 if pfglobals.showQueries:
     st.markdown("#### Query")
     st.markdown(los_by_attribute_query)
 
-st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_attribute_query, pfglobals.conn_dict), selected_list["db_column"]))
+df = pfglobals.create_data_frame(pfglobals.run_query(los_by_attribute_query, pfglobals.conn_dict), selected_list["db_column"])
+pfglobals.show_bar_chart(df, pfglobals.LENGTH_OF_STAY_TEXT, pfglobals.COUNT_TEXT, True)
 
 #######################################################
 #                Side by Side Charts                  #

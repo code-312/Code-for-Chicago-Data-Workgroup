@@ -61,14 +61,15 @@ for attribute_list in attribute_lists:
         break
 
 los_by_attribute_query = """
-    SELECT %s,Count(*) as "Count" FROM "%s" %s GROUP BY %s %s %s;
-    """ % (selected_list["db_column"], pfglobals.DATABASE_TABLE, where_clause, selected_list["db_column"], pfglobals.los_sort, pfglobals.limit_query)
+    SELECT %s,Count(*) as "%s" FROM "%s" %s GROUP BY %s %s %s;
+    """ % (selected_list["db_column"], pfglobals.COUNT_TEXT, pfglobals.DATABASE_TABLE, where_clause, selected_list["db_column"], pfglobals.los_sort, pfglobals.limit_query)
 
 if pfglobals.showQueries:
     st.markdown("#### Query")
     st.markdown(los_by_attribute_query)
 
-st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_attribute_query, pfglobals.conn_dict), selected_list["db_column"]))
+df = pfglobals.create_data_frame(pfglobals.run_query(los_by_attribute_query, pfglobals.conn_dict), selected_list["db_column"])
+pfglobals.show_bar_chart(df, pfglobals.COUNT_TEXT, "", False)
 
 #######################################################
 #                Side by Side Charts                  #
