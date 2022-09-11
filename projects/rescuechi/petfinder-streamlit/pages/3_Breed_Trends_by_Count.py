@@ -51,14 +51,15 @@ if len(pfglobals.breeds_list) > 0 and len(pfglobals.breeds_list) < len(pfglobals
     where_clause += ") "
 
 los_by_breed_query = """
-    SELECT breed_primary,Count(*) as "Count" FROM "%s" %s GROUP BY breed_primary %s %s;
-    """ % (pfglobals.DATABASE_TABLE, where_clause, pfglobals.los_sort, pfglobals.limit_query)
+    SELECT breed_primary,Count(*) as "%s" FROM "%s" %s GROUP BY breed_primary %s %s;
+    """ % (pfglobals.COUNT_TEXT, pfglobals.DATABASE_TABLE, where_clause, pfglobals.los_sort, pfglobals.limit_query)
 
 if pfglobals.showQueries:
     st.markdown("#### Query")
     st.markdown(los_by_breed_query)
 
-st.bar_chart(pfglobals.create_data_frame(pfglobals.run_query(los_by_breed_query, pfglobals.conn_dict), "breed_primary"))
+df = pfglobals.create_data_frame(pfglobals.run_query(los_by_breed_query, pfglobals.conn_dict), "breed_primary")
+pfglobals.show_bar_chart(df, pfglobals.COUNT_TEXT, "", False)
 
 #######################################################
 #                Side by Side Charts                  #
