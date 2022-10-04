@@ -1,12 +1,14 @@
 <h1 align="center">Rescuelytics</h1>
 <h4 align="center">PetFinder Dashboard for Rescue Dogs</h4>
 
-<h5 align="center">  By:  <a href="https://github.com/kaylarobinson077">Kayla Robinson</a>, <a href="https://github.com/TheeChris">Chris Lynch</a>, <a href="https://github.com/ecooperman">Evan Cooperman</a>, Joseph Adorno</a>, Cara Karter</a> - <a href="https://codeforchicago-rescuechi.herokuapp.com/"><i>Live site</i></h5>
+<div align="center"><img src="https://user-images.githubusercontent.com/89172742/193910009-1faf3fe1-d991-4ccf-afde-fa4d448f27aa.png" width="552" height="278" /></div>
+
+<h5 align="center">  By:  <a href="https://github.com/kaylarobinson077">Kayla Robinson</a>, <a href="https://github.com/TheeChris">Chris Lynch</a>, <a href="https://github.com/ecooperman">Evan Cooperman</a>, Joseph Adorno, Cara Karter - <a href="https://codeforchicago-rescuechi.herokuapp.com/"><i>Live site</i></h5>
 
 ### Table of Contents
 - [Main purpose](#main)
 - [How to use this application](#how-to-use-this-application)
-- [What's next?](#what's-next)
+- [What's next?](#whats-next)
 - [Conclusion and Contributions](#conclusion-and-contributions)
 
 ## Main
@@ -34,7 +36,13 @@ To learn more about the journeys of these rescued pups, we pulled data from the 
 ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/postgres.svg)
 ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/python.svg)
 
-### How to use this application
+<h4>Data Scraping and Cleaning</h4> <sub>- Python (requests, pandas)</sub>
+
+<h4>Database</h4> <sub>- Python (sqlalchemy, pandas), SQL, PostgreSQL, Heroku</sub>
+
+<h4>Visualization and App</h4> <sub>- Python (streamlit, pandas, matplotlib), SQL, Heroku</sub>
+
+## How to use this application
 
 1. Clone this repository.
 2. `cd` into the root directory of this project.
@@ -45,7 +53,7 @@ To run any of these scripts, you'll need to install the requirements:
 pip install -r projects/rescuechi/petfinder/requirements.txt
 ```
 
-## Data Getter
+### Data Getter
 
 To use the functions in this script, you'll need to set up your PetFinder API key
 and secret as environment variables.
@@ -70,7 +78,7 @@ python data_getter.py
 This will create a file called `chicago_animals.pkl` in the `rescuechi/petfinder/data`
 folder.
 
-## Data Cleaner
+### Data Cleaner
 
 This script reads and saves files locally, so no extra set-up beyond installing the
 python requirements is needed.
@@ -85,7 +93,7 @@ This will create a file called `chicago_animals_clean.pkl` in the
 `rescuechi/petfinder/data` folder.
 
 
-## Data Putter
+### Data Putter
 
 This script syncs data to Heroku, and in order to do so, requires you to set up the
 database uri as an environment variable. There are two ways to do so, either by copying
@@ -131,15 +139,19 @@ echo $DATABASE_URL
 
 and checking that it prints back your uri.
 
-## What's next?
+## What's next
 Expand dataset to other major metro areas in the US to look at differences.
 Add other fields from Petfinder to the dashboard including organizations and listing content. Expand to other pets.
 
 ## Conclusion and Contributions
-Women Who Code Hackathon for Social Good 2022.
+<h5>Project made during Women Who Code Hackathon for Social Good 2022.</h5>
 
-Rescue Chicago
+### [Rescue Chicago](https://rescuechi.org/)
+<img src="https://user-images.githubusercontent.com/89172742/193914404-16b5c6b5-bdf0-46e1-9e52-78c8b3cdd381.png" width="594" height="303" />
 
-Code for Chicago
+### [Code for Chicago](https://codeforchicago.org/)
+<img src="https://user-images.githubusercontent.com/89172742/193916463-96b92d44-9696-4207-b82b-bafe52f8ce61.png" width="594" height="303" />
 
-Contributers
+
+##### Contributers -
+<sub>Kayla Robinson, Chris Lynch, Evan Cooperman, Joseph Adorno, Cara Karter</sub>
