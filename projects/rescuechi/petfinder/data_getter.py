@@ -229,5 +229,5 @@ def get_animals(
 
 if __name__=="__main__":
     get_animals(
-        type="dog", status="adopted", organization=None, max_pages=None
+        type="dog", status="adopted", organization=None, max_pages=5
     )
