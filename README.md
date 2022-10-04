@@ -153,5 +153,5 @@ Add other fields from Petfinder to the dashboard including organizations and lis
 <img src="https://user-images.githubusercontent.com/89172742/193916463-96b92d44-9696-4207-b82b-bafe52f8ce61.png" width="594" height="303" />
 
 
-##### Contributers -
-<sub>Kayla Robinson, Chris Lynch, Evan Cooperman, Joseph Adorno, Cara Karter</sub>
+### Contributers -
+**Kayla Robinson, Chris Lynch, Evan Cooperman, Joseph Adorno, Cara Karter**
