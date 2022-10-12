@@ -44,31 +44,39 @@ To learn more about the journeys of these rescued pups, we pulled data from the 
 
 ## How to use this application
 
-1. Clone this repository.
-2. `cd` into the root directory of this project.
-
-To run any of these scripts, you'll need to install the requirements:
+1. Clone the repository with Git:
 
 ```bash
-pip install -r projects/rescuechi/petfinder/requirements.txt
+https://github.com/Code-For-Chicago/Code-for-Chicago-Data-Workgroup.git
+```
+2. Create a file called `.env` in the root directory. This file is ignored via the .gitignore file to avoid committing secrets.
+
+3. Open `.env` in a text editor and add this as the contents, replacing the second part with your personal API keys. There is also a .env.example to follow for more help.
+
+4. You can request a Petfinder API
+key and secret [here](https://www.petfinder.com/developers/).
+```
+PETFINDER_KEY=REPLACE_ME_WITH_PETFINDER_KEY
+PETFINDER_SECRET=REPLACE_ME_WITH_PETFINDER_SECRET
+DATABASE_URL=postgresql://username_goes_here:password_goes_here@localhost/app_name_here
+PETFINDER_STREAMLIT_SHOW_QUERIES=False
+PETFINDER_STREAMLIT_CHART_TYPE=advanced
+HEROKU_POSTGRESQL_AMBER_URL=REPLACE_ME_WITH_HEROKU_URI
+```
+- Set PETFINDER_STREAMLIT_SHOW_QUERIES to False or True if you want to see queries shown on the frontend. Default is False.
+- Set PETFINDER_STREAMLIT_CHART_TYPE to simple, advanced or all, depending which type of chart you would like to see. Default is advanced.
+- Scroll down to [Option 1: Manual](#option-1-manual) on how to setup HEROKU_POSTGRESQL_AMBER_URL
+- **OPTIONAL** - Scroll down to [Local PostgreSQL Setup](#local-postgresql-setup) on how to setup a local psql database.
+
+Now install required modules in requirements.txt
+
+```bash
+pip install -r requirements.txt
 ```
 
 ### Data Getter
 
-To use the functions in this script, you'll need to set up your PetFinder API key
-and secret as environment variables.
-
-First, request an API and secret, and put these somewhere safe. You can request an API
-key [here](https://www.petfinder.com/developers/).
-
-Next, export your key and secret to your enviornment. For example, you could run:
-
-```bash
-export PETFINDER_KEY=<your-api-key>
-export PETFINDER_SECRET=<your-api-secret>
-```
-
-Now, you're ready to run the script. To pull down the first 100K results for dogs in and
+To pull down the first 100K results for dogs in and
 around Chicago, you can run:
 
 ```python
@@ -95,30 +103,13 @@ This will create a file called `chicago_animals_clean.pkl` in the
 
 ### Data Putter
 
-This script syncs data to Heroku, and in order to do so, requires you to set up the
-database uri as an environment variable. There are two ways to do so, either by copying
-the uri manually from the Heroku UI, or through the Heroku CLI.
+This script syncs data to Heroku's PostgreSQL database. If you want the script to sync data locally, set the uri variable to DATABASE_URL.
 
 ### Option 1: Manual
 
 To copy the uri manually, you will first need to be part of the team's Heroku account.
 Then, navigate to https://data.heroku.com/ and select the datastore called
 `postgresql-corrugated-21223`. Click on `settings`, then `View Credentials...`, and look for a variable called `URI`.
-
-From the command line, run the following, replacing the value of `<paste-uri-here>`
-with the value you see on Heroku's UI. It should start with `postgres://`:
-
-```bash
-export DATABASE_URL=<paste-uri-here>
-```
-
-You can test that this worked by running
-
-```bash
-echo $DATABASE_URL
-```
-
-and checking that it prints back your uri.
 
 ### Option 2: CLI
 
@@ -138,6 +129,9 @@ echo $DATABASE_URL
 ```
 
 and checking that it prints back your uri.
+
+### Local PostgreSQL Setup
+
 
 ## What's next
 Expand dataset to other major metro areas in the US to look at differences.
