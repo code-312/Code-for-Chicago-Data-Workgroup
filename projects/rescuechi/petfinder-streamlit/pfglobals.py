@@ -6,7 +6,7 @@ from psycopg2.extras import RealDictCursor
 import plotly.express as px
 from config import HEROKU_URL, SHOW_QUERIES, CHART_TYPE
 
-showQueries = SHOW_QUERIES
+showQueries = SHOW_QUERIES == "True"
 showChartType = CHART_TYPE
 DATABASE_URL = HEROKU_URL
 
