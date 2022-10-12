@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 from pathlib import Path
 import pickle
+from config import PETFINDER_KEY, PETFINDER_SECRET
 
 DATA_DIR = Path(__file__).parent / "data"
 
