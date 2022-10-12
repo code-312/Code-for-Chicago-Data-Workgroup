@@ -63,16 +63,22 @@ PETFINDER_STREAMLIT_SHOW_QUERIES=False
 PETFINDER_STREAMLIT_CHART_TYPE=advanced
 HEROKU_POSTGRESQL_AMBER_URL=REPLACE_ME_WITH_HEROKU_URI
 ```
-- Set PETFINDER_STREAMLIT_SHOW_QUERIES to False or True if you want to see queries shown on the frontend. Default is False.
-- Set PETFINDER_STREAMLIT_CHART_TYPE to simple, advanced or all, depending which type of chart you would like to see. Default is advanced.
+- Set PETFINDER_STREAMLIT_SHOW_QUERIES to False or True if you want to see queries shown on the frontend. False is the default.
+- Set PETFINDER_STREAMLIT_CHART_TYPE to simple, advanced or all, depending which type of chart you would like to see. advanced is the default.
 - Scroll down to [Option 1: Manual](#option-1-manual) on how to setup HEROKU_POSTGRESQL_AMBER_URL
-- **OPTIONAL** - Scroll down to [Local PostgreSQL Setup](#local-postgresql-setup) on how to setup a local psql database.
+- ** **OPTIONAL** ** - Scroll down to [Local PostgreSQL Setup](#local-postgresql-setup) on how to setup a local psql database.
 
-Now install required modules in requirements.txt
+Now install required modules in requirements.txt:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+To start Streamlit locally:
+```bash
+streamlit run projects/rescuechi/petfinder-streamlit/Home.py
+```
+Open the Network URL it gives you in your browser.
 
 ### Data Getter
 
@@ -131,7 +137,22 @@ echo $DATABASE_URL
 and checking that it prints back your uri.
 
 ### Local PostgreSQL Setup
+If you have PostgreSQL installed locally, in the terminal type psql and enter the commands:
 
+```bash
+CREATE USER username WITH PASSWORD 'password' CREATEDB;
+```
+
+```bash
+CREATE DATABASE app_name WITH OWNER username;
+```
+
+Add your updated username, password and database name to your .env file. The DATABASE_URL line in your .env file should look like this with your details instead.
+> DATABASE_URL=postgresql://username:password@localhost/app_name
+
+Once that's done you can follow the Data Getter & Setter guide up above. In the Data Putter, you will need to set the uri variable to DATABASE_URL instead of HEROKU_URL. I recommend using [Postbird](https://github.com/Paxa/postbird) or a similar app to view the data.
+
+<sub>* **Note** - While you can see the data locally with postbird, it doesn't work through Streamlit yet.</sub>
 
 ## What's next
 Expand dataset to other major metro areas in the US to look at differences.

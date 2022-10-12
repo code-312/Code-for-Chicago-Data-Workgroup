@@ -229,6 +229,7 @@ def get_animals(
     return df_animals
 
 if __name__=="__main__":
+    # Set max_pages to None to pull all data
     get_animals(
-        type="dog", status="adopted", organization=None, max_pages=5
+        type="dog", status="adopted", organization=None, max_pages=10
     )
