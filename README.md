@@ -1,4 +1,4 @@
-<h1 align="center">Rescuelytics</h1>
+<h1 align="center">Rescue Chicago</h1>
 <h4 align="center">PetFinder Dashboard for Rescue Dogs</h4>
 
 <div align="center"><img src="https://user-images.githubusercontent.com/89172742/193910009-1faf3fe1-d991-4ccf-afde-fa4d448f27aa.png" width="552" height="278" /></div>
