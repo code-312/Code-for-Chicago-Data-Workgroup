@@ -111,6 +111,10 @@ This will create a file called `chicago_animals_clean.pkl` in the
 
 This script syncs data to Heroku's PostgreSQL database. If you want the script to sync data locally, set the uri variable to DATABASE_URL.
 
+```python
+python data_putter.py
+```
+
 ### Option 1: Manual
 
 To copy the uri manually, you will first need to be part of the team's Heroku account.
