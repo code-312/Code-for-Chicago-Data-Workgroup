@@ -10,6 +10,9 @@ from psycopg2.extras import RealDictCursor
 import plotly.express as px
 import pfglobals
 
+import plotly.express as px
+import plotly.graph_objects as go
+
 st.markdown("# Chicago Rescue Dog Trends")
 st.markdown("## Breed Trends from Petfinder Data")
 st.markdown("### How does dog breed affect average length of time from intake to adoption?")
@@ -98,9 +101,18 @@ for select_boxes in all_select_boxes:
     left_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["left"]})
     right_values.append({"db_column": select_boxes["db_column"], "db_col_type": select_boxes["db_col_type"], "select_box": select_boxes["right"]})
 
+df = pfglobals.get_comparison_dataframe(left_values, right_values, original_where_clause, "breed_primary", "los")
+fig = go.Figure()
+for col in ["left_group", "right_group"]:
+    fig.add_bar(x=df.index, y=df[col])
+st.plotly_chart(fig)
+
+# plotly_obj = px.bar(df, x=df.index, y="left_group")
+# st.plotly_chart(plotly_obj)
+
 # Create comparison charts
-pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, "breed_primary", True)
-pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, "breed_primary", True)
+# pfglobals.create_comparison_chart(leftCol, left_values, original_where_clause, "breed_primary", True)
+# pfglobals.create_comparison_chart(rightCol, right_values, original_where_clause, "breed_primary", True)
 #######################################################
 #             End of Side by Side Charts              #
 #######################################################
