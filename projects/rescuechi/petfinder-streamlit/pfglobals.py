@@ -4,12 +4,12 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import plotly.express as px
+from config import HEROKU_URL, SHOW_QUERIES, CHART_TYPE
 
-import plotly.express as px
 
-showQueries = os.environ['PETFINDER_STREAMLIT_SHOW_QUERIES'] == "True"
-showChartType = os.environ['PETFINDER_STREAMLIT_CHART_TYPE']
-DATABASE_URL = os.environ['HEROKU_POSTGRESQL_AMBER_URL']
+showQueries = SHOW_QUERIES == "True"
+showChartType = CHART_TYPE
+DATABASE_URL = HEROKU_URL
 
 SIMPLE_CHART_TYPE = "simple"
 ADVANCED_CHART_TYPE = "advanced"

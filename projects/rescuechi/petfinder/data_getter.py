@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 from pathlib import Path
 import pickle
+from config import PETFINDER_KEY, PETFINDER_SECRET
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -228,6 +229,7 @@ def get_animals(
     return df_animals
 
 if __name__=="__main__":
+    # Set max_pages to None to pull all data
     get_animals(
-        type="dog", status="adopted", organization=None, max_pages=None
+        type="dog", status="adopted", organization=None, max_pages=10
     )
