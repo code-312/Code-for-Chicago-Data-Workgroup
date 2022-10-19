@@ -4,7 +4,7 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import plotly.express as px
-from config import HEROKU_URL, SHOW_QUERIES, CHART_TYPE
+from config import HEROKU_URL, SHOW_QUERIES, CHART_TYPE, LOCAL_DATABASE_URL
 
 
 showQueries = SHOW_QUERIES == "True"
@@ -117,7 +117,7 @@ def construct_where_clause(values, og_where_clause):
                 comparison_where_clause += values[i]["db_column"] + "=False"
             else:
                 comparison_where_clause += values[i]["db_column"] + "=None"
-        i += 1    
+        i += 1
 
     # this means our where clause is empty, so clear it out
     if comparison_where_clause == WHERE_START:
@@ -126,23 +126,23 @@ def construct_where_clause(values, og_where_clause):
     # this means we have breeds set but nothing else, so set back to the breeds where query
     if comparison_where_clause.endswith(AND_START):
         comparison_where_clause = og_where_clause
-    
+
     return comparison_where_clause
-    
+
 def construct_comparison_query(left_values, right_values, og_where_clause, group_by_col, target_col):
     left_where_clause = construct_where_clause(left_values, og_where_clause)
     right_where_clause = construct_where_clause(right_values, og_where_clause)
-    
+
     if target_col == "count":
         target_query = "count(*)"
     elif target_col == "los":
         target_query = "AVG(los)::bigint"
     else:
         raise ValueError
-    
+
     # we renamed the col in the aggregated dataframe
     mod_los_sort = los_sort.replace("AVG(los)", "av")
-    
+
     comparison_query = f"""
     WITH a AS
     (SELECT {group_by_col}, {target_query} AS left_group FROM {DATABASE_TABLE} {left_where_clause} GROUP BY {group_by_col}),
@@ -151,16 +151,16 @@ def construct_comparison_query(left_values, right_values, og_where_clause, group
     {mod_los_sort}
     {limit_query}
     """
-    
+
     return comparison_query
-    
-        
+
+
 def get_comparison_dataframe(left_values, right_values, og_where_clause, group_by_col, target_col):
     comparison_query = construct_comparison_query(left_values, right_values, og_where_clause, group_by_col, target_col)
     query_results = run_query(comparison_query, conn_dict)
     df = create_data_frame(query_results, group_by_col)
     return df
-        
+
 
 def create_comparison_chart(column, values, og_where_clause, main_db_col, is_los):
     if not og_where_clause:

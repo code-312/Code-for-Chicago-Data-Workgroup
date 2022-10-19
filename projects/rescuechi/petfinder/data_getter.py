@@ -231,6 +231,6 @@ def get_animals(
 if __name__=="__main__":
     # Set max_pages to None to pull all data
     get_animals(
-        type="dog", status="adopted", organization=None, max_pages=10
+        type="dog", status="adopted", organization=None, max_pages=None
     )
     get_organizations()

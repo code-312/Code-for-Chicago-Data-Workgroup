@@ -30,7 +30,7 @@ def calc_los(raw_published_col, raw_status_change_col) -> pd.Series:
     status_change_dt.name = "status_changed_at"
 
     los_days = (status_change_dt - published_dt).dt.days
-    los_days.name = "length_of_stay"
+    los_days.name = "los"
 
     los_df = pd.concat([published_dt, status_change_dt, los_days], axis=1)
 
@@ -38,7 +38,7 @@ def calc_los(raw_published_col, raw_status_change_col) -> pd.Series:
 
 def explode_column(col, col_prefix) -> pd.DataFrame:
     """
-    Take a column that cocntains a dictionary (e.g. breed, colors) and split it into
+    Take a column that contains a dictionary (e.g. breed, colors) and split it into
     multiple columns, one for each key of the dictionary.
 
     Parameters
@@ -60,14 +60,37 @@ def explode_column(col, col_prefix) -> pd.DataFrame:
 
     return exploded
 
+def find_org(animal_org_id, org_id_name) -> pd.DataFrame:
+    organization_map = {}
+    for i in org_id_name.itertuples():
+        organization_map[i[1]] = i[2]
+    orgs = {'organization_id': [], 'name': []}
+    for i in animal_org_id.itertuples():
+        if i[1] in organization_map:
+            orgs["organization_id"].append(i[1])
+            orgs["name"].append(organization_map[i[1]])
+        else:
+            orgs["organization_id"].append(i[1])
+            orgs["name"].append("Organization not found")
+    org_dict_df = pd.DataFrame(data=orgs)
+
+    return org_dict_df
+
+
 if __name__ == "__main__":
 
-    # read in the raw data
+    # read in the raw data for animals
     data_file = DATA_FOLDER / "chicago_animals.pkl"
+    # read in the raw data for organizations
     org_data_file = DATA_FOLDER / "chicago_orgs.pkl"
 
     df_raw = pd.read_pickle(data_file)
     org_df_raw = pd.read_pickle(org_data_file)
+
+    # find the org name by id
+    org_info = ["id", "name"]
+    org_id = ["organization_id"]
+    org = find_org(df_raw[org_id], org_df_raw[org_info])
 
     # calculate the length of stay
     los = calc_los(df_raw["published_at"], df_raw["status_changed_at"])
@@ -79,10 +102,10 @@ if __name__ == "__main__":
     attributes = explode_column(df_raw["attributes"], "attribute")
 
     # we can keep some columns as-is
-    cols_as_is = ["id", "organization_id", "age", "gender", "size", "coat", "name"]
+    cols_as_is = ["id", "age", "gender", "size", "coat", "name"]
 
     # concatenate the final columns
-    df_final = pd.concat([df_raw[cols_as_is], los, breeds, colors, environ, attributes], axis=1)
+    df_final = pd.concat([df_raw[cols_as_is], org, los, breeds, colors, environ, attributes], axis=1)
 
     # save cleaned dataframe to a pickle file
     df_final.to_pickle(DATA_FOLDER / "chicago_animals_cleaned.pkl")
