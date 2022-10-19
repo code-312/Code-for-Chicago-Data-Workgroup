@@ -25,15 +25,15 @@ def calc_los(raw_published_col, raw_status_change_col) -> pd.Series:
 
     published_dt = pd.to_datetime(raw_published_col)
     published_dt.name = "published_at"
-    
+
     status_change_dt = pd.to_datetime(raw_status_change_col)
     status_change_dt.name = "status_changed_at"
 
     los_days = (status_change_dt - published_dt).dt.days
-    los_days.name = "los"
-    
-    los_df = pd.concat([published_dt, status_change_dt, status_change_dt], axis=1)
-    
+    los_days.name = "length_of_stay"
+
+    los_df = pd.concat([published_dt, status_change_dt, los_days], axis=1)
+
     return los_df
 
 def explode_column(col, col_prefix) -> pd.DataFrame:
@@ -64,7 +64,10 @@ if __name__ == "__main__":
 
     # read in the raw data
     data_file = DATA_FOLDER / "chicago_animals.pkl"
+    org_data_file = DATA_FOLDER / "chicago_orgs.pkl"
+
     df_raw = pd.read_pickle(data_file)
+    org_df_raw = pd.read_pickle(org_data_file)
 
     # calculate the length of stay
     los = calc_los(df_raw["published_at"], df_raw["status_changed_at"])
@@ -80,6 +83,6 @@ if __name__ == "__main__":
 
     # concatenate the final columns
     df_final = pd.concat([df_raw[cols_as_is], los, breeds, colors, environ, attributes], axis=1)
-    
+
     # save cleaned dataframe to a pickle file
     df_final.to_pickle(DATA_FOLDER / "chicago_animals_cleaned.pkl")

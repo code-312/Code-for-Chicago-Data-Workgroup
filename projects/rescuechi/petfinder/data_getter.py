@@ -233,3 +233,4 @@ if __name__=="__main__":
     get_animals(
         type="dog", status="adopted", organization=None, max_pages=10
     )
+    get_organizations()

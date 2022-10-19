@@ -90,7 +90,7 @@ def append_to_table(engine: sqlalchemy.engine.Engine):
 
 
 def drop_duplicate_rows(engine: sqlalchemy.engine.Engine):
-    """Drops rows with dupliccatd 'id' values.
+    """Drops rows with duplicated 'id' values.
 
     Parameters
     ----------
