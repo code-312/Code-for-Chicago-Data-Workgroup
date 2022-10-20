@@ -60,18 +60,19 @@ def explode_column(col, col_prefix) -> pd.DataFrame:
 
     return exploded
 
-def find_org(animal_org_id, org_id_name) -> pd.DataFrame:
+def find_org(org_id, org_name) -> pd.DataFrame:
     organization_map = {}
-    for i in org_id_name.itertuples():
+    for i in org_name.itertuples():
         organization_map[i[1]] = i[2]
-    orgs = {'organization_id': [], 'name': []}
-    for i in animal_org_id.itertuples():
+    orgs = {'organization_id': [], 'organization_name': []}
+    for i in org_id.itertuples():
         if i[1] in organization_map:
             orgs["organization_id"].append(i[1])
-            orgs["name"].append(organization_map[i[1]])
+            orgs["organization_name"].append(organization_map[i[1]])
         else:
             orgs["organization_id"].append(i[1])
-            orgs["name"].append("Organization not found")
+            orgs["organization_name"].append("Organization not found")
+
     org_dict_df = pd.DataFrame(data=orgs)
 
     return org_dict_df
